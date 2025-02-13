@@ -1,0 +1,5 @@
+# Required to enforece branch protection rules for `dev` and `main` to make sure that
+#   pull requests approved by Semyon Hoyrish
+
+* @SemyonHoyrish
+
