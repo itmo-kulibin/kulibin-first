@@ -2,13 +2,69 @@
   export let year = '';
 </script>
 
-<div class="relative w-full mb-5 font-[Inter]">
-  <div class="flex items-center">
-      <div class="w-16 h-16 border-4 border-[#000957] rounded-full mr-5"></div>
-      <div class="text-6xl font-bold text-[#344CB7]">{year}</div>
+<style>
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: inherit;
+  }
+
+  .content-container {
+      position: relative;
+      width: 100%;
+      margin-bottom: 20px;
+      .text-with-line {
+          position: inherit;
+          font-style: normal;
+          font-family: Inter;
+          font-weight: 400;
+          color: #000957;
+          margin-right: 16px;
+          padding-left: 64px;
+      }
+
+      .text-with-line::before {
+          content: '';
+          position: absolute;
+          left: 28px;
+          top: 0;
+          bottom: 0;
+          width: 4px;
+          background-color: #000957;
+      }
+      .circle-with-text {
+          width: 100%;
+          position: inherit;
+          display: inline-flex;
+          .circle {
+              position: inherit;
+              width: 1em;
+              height: 1em;
+              border-radius: 50%;
+              border: 3px solid #000957; 
+              font-size: 64px;
+              margin-right: 20px;
+          }
+          
+          .year {
+              position: relative;
+              font-family: Inter;
+              font-style: normal;
+              font-weight: 700;
+              color: #344CB7;
+              font-size: 300%;
+          }
+      }
+  }
+</style>
+
+<div class="content-container">
+  <div class="circle-with-text">
+    <div class="circle"></div>
+    <div class="year">{year}</div>
   </div>
-  <div class="relative pl-16 text-[#000957] text-lg">
-      <div class="absolute left-7 top-0 bottom-0 w-1 bg-[#000957]"></div>
-      <slot></slot>
+  <div class="text-with-line">
+    <slot></slot>
   </div>
 </div>
