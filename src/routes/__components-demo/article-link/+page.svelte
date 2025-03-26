@@ -22,9 +22,3 @@
     {/each}
   </div>
   
-  <style>
-    .article-list {
-      background: #f7f1ed;
-    }
-  </style>
-  
