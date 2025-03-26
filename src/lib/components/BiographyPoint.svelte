@@ -37,6 +37,7 @@
           width: 100%;
           position: inherit;
           display: inline-flex;
+          align-items: center;
           .circle {
               position: inherit;
               width: 1em;
@@ -53,7 +54,7 @@
               font-style: normal;
               font-weight: 700;
               color: #344CB7;
-              font-size: 300%;
+              font-size: 53px;
           }
       }
   }
