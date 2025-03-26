@@ -3,7 +3,6 @@
   import EmbeddedBlockText from '$lib/components/EmbeddedBlockText.svelte';
 </script>
 
-
 <EmbeddedBlock title="Любопытный факт">
   <EmbeddedBlockText slot="short">
     В 1772 году Лондонская академия назначила большую премию тому, кто сделает лучшую модель...
@@ -28,4 +27,3 @@
     1764 г"
   </EmbeddedBlockText>
 </EmbeddedBlock>
-
