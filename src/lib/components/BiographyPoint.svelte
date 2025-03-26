@@ -15,6 +15,7 @@
       width: 100%;
       margin-bottom: 20px;
       .text-with-line {
+          top: 10px;
           position: inherit;
           font-style: normal;
           font-family: Inter;
@@ -27,7 +28,7 @@
       .text-with-line::before {
           content: '';
           position: absolute;
-          left: 28px;
+          left: 29px;
           top: 0;
           bottom: 0;
           width: 4px;
