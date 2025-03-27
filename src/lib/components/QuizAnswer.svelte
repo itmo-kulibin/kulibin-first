@@ -1,5 +1,5 @@
 <script>
-    let { answer = "none", correct = false} = $props(); 
+    let { answer = "none", correct = false, active = true, setIndex} = $props(); 
     const STATES = { NEUTRAL: 0, CORRECT: 1, INCORRECT: 2 };
     let buttonState = $state(STATES.NEUTRAL);
     function checkTrue() {
@@ -8,12 +8,17 @@
         }else{
             buttonState = STATES.INCORRECT;
         }
-        
+        setIndex();
     }
 </script>
 
+
+<button class="QuizButton text-lg {buttonState == 0 ? '' : buttonState == 1 ? 'correct' : 'incorrect'} {active ? '' : 'inactive'}" onclick={checkTrue} >
+    {answer}
+</button>
+
 <style>
-@keyframes revealAnswer {
+    @keyframes revealAnswer {
         from {
             background-color: transparent;
             color: black;
@@ -29,9 +34,7 @@
         gap: 8px;
         border-radius: 100px;
         border-width: 1px;
-
         color: #344CB7;
-
         border: 1px solid #344CB7
     }
     .QuizButton:hover {
@@ -47,11 +50,14 @@
         --final-color: #FF5722;
         animation: revealAnswer 0.5s forwards;
     }
+    .inactive {
+        opacity: 0.5;
+        transition: opacity 0.5s
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+    
 
 </style>
 
 
-
-<button class="QuizButton {buttonState == 0 ? '' : buttonState == 1 ? 'correct' : 'incorrect'}" onclick={checkTrue} >
-    {answer}
-</button>
