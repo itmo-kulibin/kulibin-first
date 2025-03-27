@@ -3,7 +3,7 @@
     export let pagename;
   </script>
   
-  <a class="article-link" href={`/${pagename}`}>
+  <a class="article-link" href={`./${pagename}`}>
     <span>{text}</span>
     <span class="arrow">→</span>
   </a>
