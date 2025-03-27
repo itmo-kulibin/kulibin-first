@@ -1,4 +1,5 @@
 <script>
+    import { fade } from "svelte/transition";
     export let image = "";
     export let title = "";
     export let yamaps = "";
@@ -12,13 +13,16 @@
   </script>
   
   {#if active}
-    <div class="popup-overlay">
+    <div class="popup-overlay" transition:fade={{ duration: 100 }}>
       <div class="popup">
-        <button class="close-btn" on:click={closePopup}><svg width="25" height="25" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="50" fill="rgba(0, 9, 87, 1)"/>
-          <line x1="30" y1="30" x2="70" y2="70" stroke="white" stroke-width="5"/>
-          <line x1="30" y1="70" x2="70" y2="30" stroke="white" stroke-width="5"/>
-        </svg></button>
+        <button class="close-btn" on:click={closePopup}><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_178_307)">
+          <rect x="4" y="4" width="40" height="40" rx="20" fill="#344CB7"/>
+          <path d="M18.4 31L17 29.6L22.6 24L17 18.4L18.4 17L24 22.6L29.6 17L31 18.4L25.4 24L31 29.6L29.6 31L24 25.4L18.4 31Z" fill="#FFF2F2"/>
+          </g><defs><clipPath id="clip0_178_307">
+          <rect x="4" y="4" width="40" height="40" rx="20" fill="white"/>
+          </clipPath></defs></svg>
+        </button>
         <img src={image} alt={title} class="popup-image" />
         <h1><b>{title}</b></h1>
         <slot></slot>
@@ -33,11 +37,11 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 9, 87, 1);
+      background: rgba(0, 9, 87, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
-  }
+    }
 
     .popup {
       background: white;
@@ -57,6 +61,7 @@
     }
 
     .popup-image {
+      max-height: 400px;
       width: 100%;
       border-radius: 10px;
     }
@@ -67,7 +72,6 @@
       right: 10px;
       background: none;
       border: none;
-      font-size: 24px;
       cursor: pointer;
     }
   
@@ -79,7 +83,6 @@
       color: blue;
       padding: 10px 20px;
       text-decoration: none;
-      border-radius: 5px;
       
       display: inline-block;
       width: max-content;
