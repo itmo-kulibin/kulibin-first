@@ -1,6 +1,14 @@
 <script>
-    // Этот компонент нужен только для семантического разделения слотов
-    // Основная логика в EmbeddedBlock
+    export let className;
   </script>
   
-  <slot />
+  <div class="embedded-block-text {className}">
+    <slot />
+  </div>
+
+  <style>
+    .embedded-block-text {
+      display: block;
+      white-space: pre-line;
+    }
+  </style>

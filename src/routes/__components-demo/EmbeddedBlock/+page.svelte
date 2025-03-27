@@ -14,7 +14,8 @@
 
 <EmbeddedBlock>
   <EmbeddedBlockText slot="short">
-    "...Мешает правильному ходу То, что употребив свободу..."
+    "...Мешает правильному ходу 
+    То, что употребив свободу..."
   </EmbeddedBlockText>
   <EmbeddedBlockText slot="full">
     "...Мешает правильному ходу  

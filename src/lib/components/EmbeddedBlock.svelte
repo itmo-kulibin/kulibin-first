@@ -13,23 +13,29 @@
     {/if}
     
     <div class="embedded-block__content">
-        <slot name="short" />
+        <div class="content-wrapper">
+            {#if !isExpanded}
+                <div class="short-text">
+                    <slot name="short" />
+                </div>
+            {/if}
         
-        {#if $$slots.full}
-            <div class="full-text" class:is-hidden={!isExpanded}>
-                <slot name="full" />
-            </div>
+            {#if $$slots.full}
+                <div class="full-text" class:is-expanded={isExpanded}>
+                    <slot name="full" />
+                </div>
             
-            <div class="toggle-container">
-                <button 
-                    class="embedded-block__toggle" 
-                    on:click={toggleExpand}
-                    aria-expanded={isExpanded}
-                >
-                    <span class="arrow">{isExpanded ? '⌃' : '⌄'}</span>
-                </button>
-            </div>
-        {/if}
+                <div class="toggle-container">
+                    <button 
+                        class="embedded-block__toggle" 
+                        on:click={toggleExpand}
+                        aria-expanded={isExpanded}
+                    >
+                        <span class="arrow">{isExpanded ? '⌃' : '⌄'}</span>
+                    </button>
+                </div>
+            {/if}
+        </div>
     </div>
 </div>
 
@@ -38,7 +44,7 @@
         padding: 1rem;
         margin: 1.5rem 0;
         background: #98a5d8;
-			  color: #42487c;
+		color: #42487c;
         font-family: serif;
         line-height: 1.6;
     }
@@ -50,19 +56,31 @@
         color: #1f2937;
     }
 	
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
     .full-text {
         margin-top: 0.75rem;
         padding-top: 0.75rem;
-        transition: all 0.3s ease;
+        max-height: 0;
         overflow: hidden;
+        opacity: 0;
+        white-space: pre-line;
+        transition: all 0.3s ease;
     }
     
-    .full-text.is-hidden {
-        max-height: 0;
-        opacity: 0;
-        padding-top: 0;
-        margin-top: 0;
-        border-top: none;
+    .short-text {
+        white-space: pre-line;
+    }
+
+    .full-text.is-expanded {
+        max-height: 1000px;
+        opacity: 1;
+        padding-top: 0.75rem;
+        margin-top: 0.75rem;
     }
     
     .toggle-container {
@@ -78,8 +96,8 @@
         justify-content: center;
         color: #1f2937;
         cursor: pointer;
-			  background: none;
-			  border: none;
+		background: none;
+        border: none;
         font-size: 1.6rem;
         font-family: sans-serif;
         transition: all 0.2s ease;
