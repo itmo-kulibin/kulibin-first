@@ -30,6 +30,7 @@
     }
     .QuizButton {
         width: 172.5px;
+        min-height: 40px;
         /* height: 40px; */
         gap: 8px;
         border-radius: 100px;

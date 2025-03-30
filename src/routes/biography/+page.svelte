@@ -190,6 +190,11 @@
                 </div>
             </BiographyPoint>
         </div></li>
+        <li>
+            <div class="question">
+                <Quiz data={data[5]}/>
+            </div>
+        </li>
         <li><div class="bio-node">
             <BiographyPoint year=1764>
                 <div class="bio-text-container">
@@ -307,6 +312,11 @@
                 </div>
             </BiographyPoint>
         </div></li>
+        <li>
+            <div class="question">
+                <Quiz data={data[6]}/>
+            </div>
+        </li>
     </ul>
 </div>
 
