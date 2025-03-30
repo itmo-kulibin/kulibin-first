@@ -16,18 +16,16 @@
 
 <div class="QuizBlock">
     <p class="text-4xl font-bold">{ data.question }</p>
-    <div class="button-container">    
-        <div class="buttons">
-            {#each data.answers as answer, index}
-                <QuizAnswer 
-                answer={answer.answer} 
-                correct={answer.correct}
-                active={active === null || active === index}
-                setIndex={() => active = index}
-                />  
-            {/each} 
-        </div>    
-    </div>
+    <div class="buttons">
+        {#each data.answers as answer, index}
+            <QuizAnswer 
+            answer={answer.answer} 
+            correct={answer.correct}
+            active={active === null || active === index}
+            setIndex={() => active = index}
+            />  
+        {/each} 
+    </div>    
 </div>
 
 <style>
@@ -48,8 +46,6 @@
         letter-spacing: -2%;
         margin-bottom: 12px;
         
-    }
-    .button-container {
     }
 
     .buttons {
