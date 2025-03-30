@@ -368,6 +368,7 @@
 
     .question {
         width: 100%;
+        margin-left: 16px;
         position: relative;
         /* margin-bottom: 40px; */
     }
