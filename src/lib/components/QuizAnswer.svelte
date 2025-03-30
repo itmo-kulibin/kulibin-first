@@ -30,7 +30,7 @@
     }
     .QuizButton {
         width: 172.5px;
-        height: 40px;
+        /* height: 40px; */
         gap: 8px;
         border-radius: 100px;
         border-width: 1px;
@@ -52,7 +52,7 @@
     }
     .inactive {
         opacity: 0.5;
-        transition: opacity 0.5s
+        transition: opacity 0.5s;
         cursor: not-allowed;
         pointer-events: none;
     }

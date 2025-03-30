@@ -31,7 +31,7 @@
 <style>
     .QuizBlock {
         width: 357px;
-        height: 164px;    
+        /* height: 164px;     */
         gap: 12px;
     }
     p {
