@@ -82,52 +82,8 @@
 
 </script>
 
-<!-- <div id="for-navbar">
-    <div>
-        <a id="main-page" href="#">Кулибин</a>
-    </div>
-    <button id="properties-button-open" on:click="{() => {show = !show}}" aria-label="Открыть меню">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 30V26.6667H35V30H5ZM5 21.6667V18.3333H35V21.6667H5ZM5 13.3333V10H35V13.3333H5Z" fill="#FFF2F2"/>
-        </svg>
-    </button>
-</div>
-
-<nav id="sidebar" class:active={show}>
-    <ul>
-        <button id="properties-button-close" on:click="{() => {show = !show}}" aria-label="Закрыть меню">
-            <svg class="nav-element-arrow" width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19.5447 15.7083H4.83325V13.2916H19.5447L12.778 6.52492L14.4999 4.83325L24.1666 14.4999L14.4999 24.1666L12.778 22.4749L19.5447 15.7083Z" fill="#FFF2F2"/>
-            </svg>
-        </button>
-        <li class="home-li"><a href="#">Кулибин</a></li>
-        <li class="menu"><a href="#">Биография</a></li>
-        <li class="menu"><a href="#">Лифт изобретений</a></li>
-        <li class="menu"><a href="#">Кулибин поэт</a></li>
-        <li class="menu"><a href="#">Места в Петербурге</a></li>
-        <li class="menu"><a href="#">Книга контактов</a></li>
-        <li class="menu"><a href="#">Изобретения</a></li>
-    </ul>
-</nav> -->
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-<header class="header">
-    <div class="header__inner_content">
-        <div class="header__home_wrapper">
-            <div class="header__home_text">
-                Кулибин
-            </div>
-        </div>
-        <div class="header__properties">
-            <button class="header__properties_button" on:click="{() => {showSidebar = !showSidebar; alert(showSidebar? "open": "colse")}}" aria-label="Открыть меню">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 30V26.6667H35V30H5ZM5 21.6667V18.3333H35V21.6667H5ZM5 13.3333V10H35V13.3333H5Z" fill="#FFF2F2"/>
-                </svg>
-            </button>
-        </div>
-    </div>
-</header>
 <div class="content__container">
     <ul>
         <li><p class="heading">
@@ -329,6 +285,7 @@
         --secondary-hover-color: #FFAE00;
         --nav-font-size-for-pc: 32px;
         --nav-font-size-for-phone: 29px;
+        --font-heading-size-for-small-devices: 32px;
         --font-heading-size: 48px;
         --nav-element-height: 62px;
         --test-bg-color-1: rgba(255, 150, 150, 0.5);
@@ -367,10 +324,22 @@
     }
 
     .question {
-        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: calc(100%-64px);
         margin-left: 16px;
         position: relative;
-        /* margin-bottom: 40px; */
+        /* background-color: var(--test-bg-color-2); */
+        margin-right: 16px;
+        margin-bottom: 10px;
+        margin-top: 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        .heading {
+            font-size: var(--font-heading-size-for-small-devices);
+        }
     }
 
     .bio-text-text {
@@ -384,53 +353,4 @@
         width: calc(100% - 32px);
         /* background-color: var(--test-bg-color-2); */
     }
-
-    .header {
-        width: 100%;
-        height: 60px;
-        background-color: var(--primary-color);
-        position: fixed;
-        display: flex;
-        align-items: center;
-        z-index: 1000;
-    }
-
-    .header__inner_content {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .header__home_wrapper {
-        margin-left: 16px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
-
-    .header__home_text {
-        font-family: Inter;
-        font-size: var(--nav-font-size-for-pc);
-        font-weight: bold;
-        color: var(--nav-color);
-    }
-
-    .header__properties {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        position: relative;
-        margin-right: 1%;
-    }
-
-    .header__properties_button {
-        position: relative;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
 </style>

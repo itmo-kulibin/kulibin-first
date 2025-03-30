@@ -29,8 +29,12 @@
         }
     }
     .QuizButton {
-        width: 172.5px;
-        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: min(172.5px, calc(((100vw - 76px) / 2)));
+        min-height: 60px;
+        /* height: 100%; */
         /* height: 40px; */
         gap: 8px;
         border-radius: 100px;
