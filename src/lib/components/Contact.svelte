@@ -24,8 +24,8 @@
       <div class="image-container">
         <img src={image} alt={fullname} />
       </div>
-      <div style="flex: 1.9;">
-        <p class="contact-text">
+      <div class='contact-text'>
+        <p>
           <slot></slot>
         </p>
       </div>
@@ -40,12 +40,6 @@
   .contact {
     display: block;
     width: 357px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #FFF2F2;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   .contact-title {
@@ -53,7 +47,11 @@
     font-size: 1.2em;
   }
 
-  .contact-text {
+  .contact-text{
+    flex: 1.9;
+  }
+
+  .contact-text p{
     color: black;
     margin-left: 5px;
     font-size: 1em;
