@@ -2,7 +2,6 @@
   export let fullname = "";
   export let image = "";
   export let isActive = false;
-  let contact_info_display = "none";
 
   function contact_click(){ 
     isActive = !isActive;
@@ -21,14 +20,10 @@
   <div class="contact-info-default" class:contact-info-active={isActive}>
     <hr>
     <div class="contact-info">
-      <div class="image-container">
-        <img src={image} alt={fullname} />
-      </div>
-      <div class='contact-text'>
         <p>
+          <img src={image} alt={fullname} class="image-class"/>
           <slot></slot>
         </p>
-      </div>
     </div>
   </div>
 
@@ -45,16 +40,7 @@
   .contact-title {
     flex-grow: 1;
     font-size: 1.2em;
-  }
-
-  .contact-text{
-    flex: 1.9;
-  }
-
-  .contact-text p{
-    color: black;
-    margin-left: 5px;
-    font-size: 1em;
+    margin: 10px;
   }
 
   .contact-info-default { 
@@ -69,17 +55,12 @@
     display: flex;
   }
 
-  .image-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .image-container img {
-    width: 100%;
+  .image-class{
+    width: 40%;
+    margin: 7px;
     height: auto;
     border-radius: 5%;
+    float: left;
   }
 
   hr {
