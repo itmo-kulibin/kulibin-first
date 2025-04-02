@@ -30,11 +30,16 @@
 
 <style>
     .QuizBlock {
-        width: 357px;
-        height: 164px;    
+        width: min(357px, 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* height: 164px;     */
         gap: 12px;
     }
     p {
+        position: relative;
         font-size: 18pt;
         color: #2D336B;
         line-height: 120%;
@@ -42,11 +47,19 @@
         margin-bottom: 12px;
         
     }
+
     .buttons {
+        position: relative;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
+        align-items: stretch;
     }
 
+    @media screen and (max-width: 800px) {
+        p {
+            font-size: 15pt;
+        }
+    }
     
 </style>
