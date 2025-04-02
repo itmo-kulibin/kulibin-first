@@ -1,6 +1,9 @@
 <script>
+    import { slide } from 'svelte/transition';
     export let title = '';
     let isExpanded = false;
+  
+    const contentId = `embedded-content-${Math.random().toString(36).substring(2, 9)}`;
   
     function toggleExpand() {
         isExpanded = !isExpanded;
@@ -15,15 +18,17 @@
     <div class="embedded-block__content">
         <div class="content-wrapper">
             {#if !isExpanded}
-                <div class="short-text">
-                    <slot name="short" />
-                </div>
+                    <div class="short-text" transition:slide|local={{ duration: 250 }}>
+                        <slot name="short" />
+                    </div>
             {/if}
         
             {#if $$slots.full}
-                <div class="full-text" class:is-expanded={isExpanded}>
-                    <slot name="full" />
-                </div>
+                {#if isExpanded}
+                        <div class="full-text" transition:slide|local={{ duration: 250 }} id={contentId}>
+                            <slot name="full" />
+                        </div>
+                {/if}
             
                 <div class="toggle-container">
                     <button 
@@ -47,6 +52,8 @@
 		color: #42487c;
         font-family: serif;
         line-height: 1.6;
+        border-radius: 12px;
+        overflow: hidden;
     }
 
 	  .embedded-block__title {
@@ -59,28 +66,20 @@
     .content-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.25rem;
     }
 
     .full-text {
         margin-top: 0.75rem;
         padding-top: 0.75rem;
-        max-height: 0;
         overflow: hidden;
-        opacity: 0;
+        opacity: 10;
         white-space: pre-line;
-        transition: all 0.3s ease;
+        transition: all 0.5s ease;
     }
     
     .short-text {
         white-space: pre-line;
-    }
-
-    .full-text.is-expanded {
-        max-height: 1000px;
-        opacity: 1;
-        padding-top: 0.75rem;
-        margin-top: 0.75rem;
     }
     
     .toggle-container {

@@ -1,14 +1,10 @@
-<script>
-    export let className;
-  </script>
-  
-  <div class="embedded-block-text {className}">
-    <slot />
-  </div>
+<div class="embedded-block-text">
+  <slot />
+</div>
 
-  <style>
-    .embedded-block-text {
-      display: block;
-      white-space: pre-line;
-    }
-  </style>
+<style> 
+  .embedded-block-text {
+    display: block;
+    white-space: pre-line;
+  }
+</style>
