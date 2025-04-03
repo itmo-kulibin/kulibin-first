@@ -2,12 +2,7 @@
     export let name = "Иван Петрович Кулибин";
     export let imageSrc = "/Images/portrait.png";
 </script>
-<nav class="navbar">
-        <h1>Кулибин</h1>
-        <svg class="menu-icon" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path stroke-width="2" stroke-linecap="round" d="M3 12h18M3 6h18M3 18h18"/>
-        </svg>
-    </nav>
+
 <div class="portrait-container">
     <img src={imageSrc} alt="Портрет {name}" class="portrait" />
     <div class="name-overlay">
@@ -31,9 +26,9 @@
         font-size: 20px;
         max-width: 100%;
         margin-bottom: 20px;
+        padding: 20px;
     }
         h2 {
-        font-family: 'Montserrat', sans-serif;
         font-size: 42px;
         font-weight: 600;
         margin: 0;
@@ -58,12 +53,6 @@
         box-sizing: border-box;
     }
     
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        background-color: #000957;
-        color: white;
-    }
 
     .menu-icon {
         cursor: pointer;
@@ -72,7 +61,6 @@
     }
     
     h1 {
-        font-family: 'Montserrat', sans-serif;
         font-size: 42px;
         font-weight: 700;
         margin-bottom: 40px;
@@ -83,10 +71,7 @@
     @media (max-width: 700px) {
         .portrait-container {
             width: 100%;
-            max-width: 100%;
-            border-radius: 0;
             height: auto;
-            margin: 0 0 10px 0;
         }
         
         .portrait {

@@ -4,19 +4,15 @@
 </script>
 
 <main class="main-content">
-    
+    <div class = "main">
     <MainPage />
-    
+    </div>
+    <div class = "nav">
     <Navigation />
+    </div>
 </main>
 
 <style>
-    body {
-        font-family: 'PT Sans', sans-serif;
-        color: #FFF2F2;
-        line-height: 1.4;
-        margin: 0;
-    }
 
     .main-content {
         max-width: 1205px;
@@ -28,6 +24,10 @@
 
     }
     
+    .main {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
     @media (max-width: 700px) {
         h1 {
             margin-left: 15px;
