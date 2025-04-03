@@ -3,8 +3,6 @@
     export let title = '';
     let isExpanded = false;
   
-    const contentId = `embedded-content-${Math.random().toString(36).substring(2, 9)}`;
-  
     function toggleExpand() {
         isExpanded = !isExpanded;
     }
@@ -18,14 +16,14 @@
     <div class="embedded-block__content">
         <div class="content-wrapper">
             {#if !isExpanded}
-                    <div class="short-text" transition:slide|local={{ duration: 250 }}>
+                    <div class="short-text" >
                         <slot name="short" />
                     </div>
             {/if}
         
             {#if $$slots.full}
                 {#if isExpanded}
-                        <div class="full-text" transition:slide|local={{ duration: 250 }} id={contentId}>
+                        <div class="full-text" transition:slide|local={{ duration: 250 }} >
                             <slot name="full" />
                         </div>
                 {/if}
@@ -70,8 +68,6 @@
     }
 
     .full-text {
-        margin-top: 0.75rem;
-        padding-top: 0.75rem;
         overflow: hidden;
         opacity: 10;
         white-space: pre-line;
