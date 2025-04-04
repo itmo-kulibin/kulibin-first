@@ -15,13 +15,11 @@
 <style>
 
     .main-content {
-        max-width: 1205px;
         margin: 0 auto;
         text-align: center;
         background: #000957;
         color: #fff2f2;
         padding: 20px;
-
     }
     
     .main {

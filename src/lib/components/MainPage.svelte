@@ -28,7 +28,7 @@
         margin-bottom: 20px;
         padding: 20px;
     }
-        h2 {
+    h2 {
         font-size: 42px;
         font-weight: 600;
         margin: 0;
@@ -51,22 +51,8 @@
         align-items: center;
         justify-content: flex-end;
         box-sizing: border-box;
+        padding: 10px
     }
-    
-
-    .menu-icon {
-        cursor: pointer;
-        margin-top: 10px;
-        margin-right: 10px;
-    }
-    
-    h1 {
-        font-size: 42px;
-        font-weight: 700;
-        margin-bottom: 40px;
-        text-align: left;
-    }
-
 
     @media (max-width: 700px) {
         .portrait-container {
