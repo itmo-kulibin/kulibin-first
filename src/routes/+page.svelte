@@ -21,6 +21,10 @@
         color: #fff2f2;
         padding: 20px;
     }
+    .nav{
+        margin: 0 auto;
+        max-width: 600px;
+    }
     
     .main {
         margin-left: -20px;
