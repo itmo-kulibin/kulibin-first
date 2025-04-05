@@ -48,7 +48,7 @@
 
     h2 {
         font-size: 68px;
-        font-weight: 640;
+        font-weight: bold;
         margin-bottom: 30px;
         color: #000957;
         line-height: 1;
