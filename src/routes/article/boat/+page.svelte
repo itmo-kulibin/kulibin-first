@@ -65,4 +65,10 @@
             aspect-ratio: 3/2;
         }
     }
+    @media (max-width: 500px) {
+        
+        h2 {
+            font-size: 38px;
+        }
+    }
 </style>
