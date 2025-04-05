@@ -12,7 +12,7 @@
 
 <div class="content_container">
     <div class="main_image">
-        <img class="top_image" src={main_image}>
+        <img class="top_image" alt="Мост Кулибина" src={main_image}>
     </div>
     <ul>
         <li class="part_name">
