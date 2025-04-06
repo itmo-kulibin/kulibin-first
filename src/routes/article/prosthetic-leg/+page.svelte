@@ -22,7 +22,7 @@
 
     <div class="heading-container">
         <div class="heading">
-            Протез("механическая нога")
+            <h2> Протез("механическая нога")</h2>
         </div>
     </div> 
 
@@ -47,8 +47,8 @@
                 Кулибин же в 1808 году сделал ещё несколько механических ног с их чертежами и описаниями, например:
             </p>
         </li>
-        <img src="/static/Image/prosthetic-leg.png" alt="Механическая нога" class="image">
-        <img src="/static/Image/prosthetic-leg_1.png" alt="Механическая нога" class="image">
+        <img src="https://i.postimg.cc/Y04nRrpQ/temp-Image-Pljo-HN.avif" alt="Механическая нога" class="image">
+        <img src="https://i.postimg.cc/P5MgPqNq/temp-Imageig2n-KM.avif" alt="Механическая нога" class="image">
         <li class="text">
             <p>
                 Помимо самих ног, Кулибин изготовил две куклы для наглядной демонстрации своих протезов. Первая кукла изображала человека, потерявшего ногу выше колена, а вторая – ниже колена. Кстати, всё это он делал за свой счёт и сам платил мастерам, участвовавшим в создании кукол (резному мастеру, живописцу, портному, парикмахеру, сапожнику).
@@ -72,10 +72,6 @@
 
 <style>
     .image {
-        position: relative;
-        width: 600px;
-        height: 400px;
-        overflow: hidden;
         margin: 0 auto 30px auto;
     }
 
@@ -138,17 +134,15 @@
         align-items: center;
         justify-content: center;
     }
-    @media screen and (max-width: 300px) {
+    @media screen and (max-width: 500px) {
         .heading {
-            font-size: 32px;
+            font-size: 24px;
         }
         .text {
             margin-top: 15px;
         }
-    }
-    @media screen and (max-width: 380px) {
         .compare-text {
-            font-size: 26px;
+            font-size: 26px
         }
     }
 </style>
