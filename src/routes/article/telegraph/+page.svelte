@@ -1,20 +1,12 @@
-
 <script>
-
-    import main_image from '$lib/images/telegraph.png';
-
-    import telegraph_code from '$lib/images/telegraph_code.png';
-
     import EmbeddedBlock from '$lib/components/EmbeddedBlock.svelte';
     import EmbeddedBlockText from '$lib/components/EmbeddedBlockText.svelte';
-
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
 
 <div class="content_container">
     <div class="main_image">
-        <img class="top_image" alt="Оптический телеграф" src={main_image}>
+        <img class="top_image" alt="Оптический телеграф" src="/images/a/telegraph.png">
     </div>
     <ul>
         <li class="part_name">
@@ -34,16 +26,8 @@
             </p>
         </li>
         <li>
-            <!-- EmbeddedBlock'у нужно поменять style -->
-            <EmbeddedBlock title="Код для оптического телеграфа">
-                <EmbeddedBlockText slot="short">
-                    Раскрой, чтобы посмотреть
-                </EmbeddedBlockText>
-                <EmbeddedBlockText slot="full">
-                    <img src={telegraph_code} alt="Код для оптического телеграфа"> 
-                </EmbeddedBlockText>
-            </EmbeddedBlock>
-
+            <h2 class="subtitle">Код для оптического телеграфа</h2>
+            <img src="/images/a/telegraph_code.png" alt="Код для оптического телеграфа"> 
         </li>
 
     </ul>
@@ -60,7 +44,6 @@
         padding-top: 10px;
     }
     .part_name p {
-        font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         font-size: 34pt;
         line-height: 120%;
@@ -69,7 +52,6 @@
         color: #000957;
     }
     .part_text p {
-        font-family: Inter;
         line-height: 140%;
         letter-spacing: 0%;
     }
@@ -93,6 +75,14 @@
         width: 551px;
         margin: 0 auto;
     }
+
+    .subtitle {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1f2937;
+    }
+
     @media (max-width: 551px) {
         .content_container {
             padding: 0 20px;
@@ -103,8 +93,6 @@
             max-width: none;
             margin: 0 calc(-1*(var(--top-image-margin)/2));
         }
-        
     }
-
 
 </style>
