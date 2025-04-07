@@ -1,9 +1,5 @@
-<script>
-    export let imageSrc = "/images/Kulibin_egg_watch.jpg";
-</script>
-
 <main class="main-content">
-    <h2>Часы «яичной фигуры»</h2>
+    <h2>Часы <br /> «яичной фигуры»</h2>
     <div class="info-text">
         <p>
             Часы «яичной фигуры» — изобретение Ивана Кулибина, созданное специально для императрицы Екатерины II.
@@ -49,14 +45,12 @@
             Сегодня эти часы можно увидеть в коллекции Государственного Эрмитажа.
         </p>
     </div>
-    <img src={imageSrc} alt="Часы яичной фигуры" class="drawing" />
+    <img src="/images/a/egg-shaped-watch.jpg" alt="Часы яичной фигуры" class="drawing" />
 </main>
 
 <style>
     .main-content {
         margin: 0 auto;
-        text-align: center;
-        background: #FFF2F2;
         color: #000000;
         padding: 20px;
     }
@@ -77,21 +71,20 @@
         padding: 0 20px;
     }
     h2 {
-        font-size: 68px;
+        font-size: 54px;
         font-weight: bold;
         margin-bottom: 30px;
         color: #000957;
         line-height: 1;
+        text-align: center;
     }
     p {
         padding-bottom: 20px;
-        text-align: justify;
     }
     @media (max-width: 700px) {
         .drawing {
             width: 100%;
             height: auto;
-            aspect-ratio: 3/2;
         }
     }
     @media (max-width: 500px) {
@@ -102,4 +95,10 @@
             font-size: 18px;
         }
     }
+    @media (max-width: 380px) {
+        h2 {
+            font-size: 28px;
+        }
+    }
+
 </style>
