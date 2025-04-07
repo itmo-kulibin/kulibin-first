@@ -1,24 +1,13 @@
 <script>
+  import Contact from "$lib/components/Contact.svelte";
   import ContactsFilters from "$lib/components/ContactsFilters.svelte";
-  import { CONTACTS, CONTACTS } from "$lib/content/contacts";
+  import { CONTACTS, FILTERS } from "$lib/content/contacts";
 
-  const filters = {
-    all: {
-      text: "Все",
-      default: true,
-    },
-    scientists: {
-      text: "Ученые",
-    },
-    students: {
-      text: "Студенты",
-    },
-    friends: {
-      text: "Друзья",
-    },
-  };
+  const filters = FILTERS;
 
   let activeFilter = $state();
+
+  let contactsState = $state({});
 </script>
 
 <div class="contacts-wrapper">
@@ -27,22 +16,19 @@
   <ul class="contacts-card">
     <!-- Подразумевается, что список CONTACTS всегда непустой. -->
     {#each CONTACTS.filter((contact) => activeFilter === "all" || contact.tags?.includes(activeFilter)) as contact}
-      <li>
-        <span class="contact-name">{contact.name}</span>
-        {#if contact.image || contact.text}
-          <div class="contact-body">
-            {#if contact.image}
-              <img
-                class="contact-image"
-                src="images/contacts/{contact.image}"
-                alt=""
-              />
-            {/if}
-            {#if contact.text}
-              <p class="contact-text">{contact.text}</p>
-            {/if}
-          </div>
-        {/if}
+        <li on:click={() => {
+            for (let a in contactsState) {
+                if (a != contact.name.replaceAll(" ", "_") + "__" + contact.text.length) {
+                    contactsState[a] = false;
+                }
+            }
+        }}>
+          <Contact
+                  fullname={contact.name}
+                  image={contact.image}
+                  bind:isActive={contactsState[contact.name.replaceAll(" ", "_") + "__" + contact.text.length]}>
+            {contact.text}
+          </Contact>
       </li>
     {/each}
   </ul>
@@ -64,30 +50,17 @@
     padding: 1rem;
     width: 100%;
     max-width: 640px;
-  }
-
-  .contact-name {
-    font-size: 1.5rem;
-    display: block;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-    border-bottom: 1px dotted #000;
-  }
-
-  .contact-body {
     display: flex;
-    gap: 0.75rem;
-    border-bottom: 1px dotted #000;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .contact-image {
-    width: 116px;
-    height: auto;
-    object-fit: cover;
+
+  @media screen and (max-width: 424px) {
+    .contacts-wrapper {
+        padding: 1rem 0.5rem;
+    }
   }
 
-  .contact-text {
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
 </style>
+

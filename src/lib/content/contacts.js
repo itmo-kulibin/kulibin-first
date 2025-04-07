@@ -1,8 +1,24 @@
+export const FILTERS = {
+    all: {
+        text: "Все",
+        default: true,
+    },
+    scientists: {
+        text: "Ученые",
+    },
+    students: {
+        text: "Студенты",
+    },
+    friends: {
+        text: "Друзья",
+    },
+};
+
 export const CONTACTS = [
   {
     name: "Студентов Студент Студентович",
     image: "",
-    text: "",
+    text: "asdasfsa",
     tags: ["students"]
   },
   {
@@ -14,7 +30,7 @@ export const CONTACTS = [
   {
     name: "Корешков Кореш Бестикович",
     image: "",
-    text: "",
-    tags: ["friends"]
+    text: "sdfsdfs",
+    tags: ["friends", "sdf", "dffdfd"]
   },
 ];
