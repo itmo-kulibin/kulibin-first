@@ -12,9 +12,9 @@
 <div class="contact">
 
   <div>
-    <a on:click={contact_click} class="contact-title" href="#">
+    <span on:click={contact_click} class="contact-title">
       {fullname}
-    </a>
+    </span>
   </div>
 
   <div class="contact-info-default" class:contact-info-active={isActive}>
@@ -43,7 +43,10 @@
   .contact-title {
     flex-grow: 1;
     font-size: 1.2em;
-    margin: 10px;
+    margin: 5px;
+    width: 100%;
+    display: block;
+    cursor: pointer;
   }
 
   .contact-info-default { 
