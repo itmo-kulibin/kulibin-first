@@ -36,9 +36,10 @@
     }
 
     h1 {
-        font-size: 50px;
+        font-size: 44px;
         color: #000957;
         text-align: center;
         line-height: 1.1;
+        margin-bottom: 25px;
     }
 </style>
