@@ -125,7 +125,6 @@
     }
     .article-text {
         line-height: 1.2;
-        text-align: justify;
         color: #000000;
     }
 </style>
