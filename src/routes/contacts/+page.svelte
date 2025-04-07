@@ -40,8 +40,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
     gap: 1rem;
+    padding: 15px 0;
   }
 
   .contacts-card {
@@ -53,13 +53,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-
-  @media screen and (max-width: 424px) {
-    .contacts-wrapper {
-        padding: 1rem 0.5rem;
-    }
   }
 
 </style>

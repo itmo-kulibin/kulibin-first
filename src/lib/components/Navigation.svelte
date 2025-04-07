@@ -1,13 +1,13 @@
-<script lang="ts">
-    export let tall: boolean = false;
+<script>
+    export let tall = false;
 
     const links = [
         { name: "Биография", href: "/biography" },
-        { name: "Лифт изобретений", href: "/lift", isHighlighted: true },
+        //{ name: "Лифт изобретений", href: "/lift", isHighlighted: true },
         { name: "Кулибин-поэт", href: "/poems" },
-        { name: "Места в Петербурге", href: "/map" },
+        //{ name: "Места в Петербурге", href: "/map" },
         { name: "Книга контактов", href: "/contacts" },
-        { name: "Изобретения", href: "/articles" },
+        { name: "Изобретения", href: "/article" },
     ];
 </script>
 

@@ -3,6 +3,8 @@
     
     import { page } from "$app/state";
     import { onMount } from 'svelte';
+    import { fade } from 'svelte/transition';
+    import Navigation from "$lib/components/Navigation.svelte";
 
 
     const MOBILE_RES_W = 768;
@@ -23,6 +25,8 @@
             }
         }
     });
+
+    let menuExtended = $state(false);
 </script>
 
 <svelte:window bind:this={window} bind:innerWidth bind:innerHeight />
@@ -45,7 +49,22 @@
             </div>
         </div>
 {:else}
-    {@render children()}
+    <header class="header">
+        <h1 class="title">Кулибин</h1>
+        <button on:click={() => {menuExtended = !menuExtended;}} class="hamburger-button" aria-label="Открыть меню">
+            <svg width="60" height="60" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 30V26.6667H35V30H5ZM5 21.6667V18.3333H35V21.6667H5ZM5 13.3333V10H35V13.3333H5Z" fill="#FFF2F2"/>
+            </svg>
+        </button>
+    </header>
+    {#if menuExtended}
+        <div class="hamburger-menu" transition:fade on:click={() => {menuExtended = false}}>
+            <Navigation />
+        </div>
+    {/if}
+    <div class="page">
+        {@render children()}
+    </div>
 {/if}
 
 <style>
@@ -80,6 +99,52 @@
         border-radius: 10px;
         overflow: scroll;
         border: 3px solid #c4c4c4;
+    }
+
+    .header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        background-color: #000957;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 15px;
+        z-index: 1001;
+        height: 84px;
+    }
+    .header .title {
+        font-size: 54px;
+        color: #FFF2F2;
+        font-weight: bold;
+    }
+
+    .hamburger-menu {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: #000957;
+        height: 100%;
+        z-index: 1000;
+        top: 84px;
+        padding: 20px 20px;
+    }
+
+    .page {
+        padding-top: 84px;
+    }
+
+    @media screen and (max-width: 375px) {
+        .header .title {
+            font-size: 48px;
+        }
+    }
+    @media screen and (max-width: 340px) {
+        .header .title {
+            font-size: 42px;
+        }
     }
 </style>
 
