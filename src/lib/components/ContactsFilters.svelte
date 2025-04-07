@@ -50,7 +50,7 @@
     background: #b9b4b4;
     border-color: #344cb7;
   }
-
+  
   @media screen and (max-width: 424px) {
       .filter-btn {
           padding: 6px 12px;

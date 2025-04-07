@@ -303,7 +303,7 @@
     .content__container {
         width: 100%;
         position: absolute;
-        top: 60px;
+        top: 70px;
         /* padding-top: 60px; */
     }
 
