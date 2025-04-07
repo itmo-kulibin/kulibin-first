@@ -21,20 +21,23 @@
     <hr>
     <div class="contact-info">
         <p>
-          <img src={image} alt={fullname} class="image-class"/>
+            {#if image}
+                <img src="/images/c/{image}" alt={fullname} class="image-class"/>
+            {/if}
           <slot></slot>
         </p>
     </div>
   </div>
-
-  <hr>
-
 </div>
+<hr>
+
 
 <style>
   .contact {
     display: block;
     width: 357px;
+
+    margin: 5px auto;
   }
 
   .contact-title {
@@ -52,6 +55,7 @@
   }
 
   .contact-info{
+    padding: 3px;
     display: flex;
   }
 

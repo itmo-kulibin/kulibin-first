@@ -26,11 +26,10 @@
 
 <style>
   .filters-container {
-    width: max-content;
-    height: max-content;
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .filter-btn {
@@ -50,5 +49,11 @@
   .filter-btn.active {
     background: #b9b4b4;
     border-color: #344cb7;
+  }
+  
+  @media screen and (max-width: 424px) {
+      .filter-btn {
+          padding: 6px 12px;
+    }
   }
 </style>
