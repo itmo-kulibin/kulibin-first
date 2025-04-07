@@ -15,6 +15,29 @@
     let innerHeight = $state(0);
     let iframe = $state();
     let window = $state();
+    let menuExtended = $state(false);
+
+    // Переменные для shy header
+    let header = $state(null);
+    let headerHeight = $state(84); // Изначальная высота заголовка из стилей
+    let headerShifterHeight = $state(0);
+    let lastScrollY = $state(0);
+    let isHeaderVisible = $state(true);
+
+    function handleScroll() {
+        if (innerWidth <= MOBILE_RES_W) {
+            const currentScrollY = window.scrollY;
+            
+            // Скрыть при прокрутке вниз, показать при прокрутке вверх
+            if (currentScrollY > lastScrollY && currentScrollY > headerHeight) {
+                isHeaderVisible = false;
+            } else {
+                isHeaderVisible = true;
+            }
+            
+            lastScrollY = currentScrollY;
+        }
+    }
 
     onMount(() => {
         if (innerWidth > MOBILE_RES_W) {
@@ -24,32 +47,39 @@
                 //window.location.pathname = "/";
             }
         }
+        
+        // Инициализация shy header
+        if (header) {
+            handleScroll(); // Установить начальное состояние
+        }
     });
-
-    let menuExtended = $state(false);
 </script>
 
-<svelte:window bind:this={window} bind:innerWidth bind:innerHeight />
+<svelte:window bind:this={window} bind:innerWidth bind:innerHeight on:scroll={handleScroll} />
 
- {#if innerHeight < 600}
+{#if innerHeight < 600}
     <div class="vertical-warn">
         <p>Окно слишком маленькое по высоте!</p>
         <p>Если вы используете телефон, переверните его в вертикальное положение.</p>
     </div>
- {:else if innerWidth > MOBILE_RES_W}
-        <div class="view-wrapper">
-            <div class="view">
-                <iframe
-                        bind:this={iframe}
-                        width="100%"
-                        height="100%"
-                        src="{page.url.href}"
-                    >
-                </iframe>
-            </div>
+{:else if innerWidth > MOBILE_RES_W}
+    <div class="view-wrapper">
+        <div class="view">
+            <iframe
+                bind:this={iframe}
+                width="100%"
+                height="100%"
+                src="{page.url.href}"
+            >
+            </iframe>
         </div>
+    </div>
 {:else}
-    <header class="header">
+    <header 
+        bind:this={header} 
+        class="header" 
+        class:header-hidden={!isHeaderVisible}
+    >
         <h1 class="title">Кулибин</h1>
         <button on:click={() => {menuExtended = !menuExtended;}} class="hamburger-button" aria-label="Открыть меню">
             <svg width="60" height="60" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +143,14 @@
         padding: 5px 15px;
         z-index: 1001;
         height: 84px;
+        transform: translateY(0);
+        transition: transform 0.3s ease-in-out;
     }
+    
+    .header-hidden {
+        transform: translateY(-100%);
+    }
+    
     .header .title {
         font-size: 54px;
         color: #FFF2F2;
@@ -147,4 +184,3 @@
         }
     }
 </style>
-
