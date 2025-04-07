@@ -1,18 +1,12 @@
-
 <script>
-
-    import main_image from '$lib/images/bridge.jpg'
-
     import EmbeddedBlock from '$lib/components/EmbeddedBlock.svelte';
     import EmbeddedBlockText from '$lib/components/EmbeddedBlockText.svelte';
-
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
 
 <div class="content_container">
     <div class="main_image">
-        <img class="top_image" alt="Мост Кулибина" src={main_image}>
+        <img class="top_image" alt="Мост Кулибина" src="/images/a/bridge.jpg">
     </div>
     <ul>
         <li class="part_name">
@@ -36,11 +30,7 @@
             </p>
         </li>
         <li>
-            <!-- EmbeddedBlock'у нужно поменять style -->
             <EmbeddedBlock title="Любопытный факт">
-                <EmbeddedBlockText slot="short">
-                    В 1772 году Лондонская академия назначила большую премию тому, кто ...
-                </EmbeddedBlockText>
                 <EmbeddedBlockText slot="full">
                     В 1772 году Лондонская академия назначила большую премию тому, кто сделает лучшую модель одноарочного моста, без свай, концы которого упирались бы только на берегах реки. Модель Кулибина полностью соответствовала требованиям, однако он отказался посылать проект в Англию, ведь очень хотел построить мост именно в России, на Неве, а не на Темзе.
                 </EmbeddedBlockText>
@@ -79,16 +69,13 @@
         padding-top: 10px;
     }
     .part_name p {
-        font-family: 'Montserrat', sans-serif;
         font-weight: 700;
-        font-size: 34pt;
+        font-size: 32pt;
         line-height: 120%;
-        letter-spacing: -2%;
         text-align: center;
         color: #000957;
     }
     .part_text p {
-        font-family: Inter;
         line-height: 140%;
         letter-spacing: 0%;
     }
@@ -122,8 +109,12 @@
             max-width: none;
             margin: 0 calc(-1*(var(--top-image-margin)/2));
         }
-        
     }
 
+    @media (max-width: 320px) {
+        .part_name p {
+            font-size: 28px;
+        }
+    }
 
 </style>
