@@ -7,19 +7,6 @@
 
 
 <div class="content-container">
-    <div class="compare-text-container">
-        <div class="compare-text">
-            Сравнение с другими изобретениями
-        </div>
-    </div>  
-
-
-    <div class="slider-container">
-        <div class="slider">
-            Слайдер
-        </div>
-    </div>
-
     <div class="heading-container">
         <div class="heading">
             <h2> Протез("механическая нога")</h2>
@@ -47,8 +34,16 @@
                 Кулибин же в 1808 году сделал ещё несколько механических ног с их чертежами и описаниями, например:
             </p>
         </li>
-        <img src="https://i.postimg.cc/Y04nRrpQ/temp-Image-Pljo-HN.avif" alt="Механическая нога" class="image">
-        <img src="https://i.postimg.cc/P5MgPqNq/temp-Imageig2n-KM.avif" alt="Механическая нога" class="image">
+
+        <div class="split-image">
+            <img src="/images/a/pleg-1.png" alt="Механическая нога">
+            <img src="/images/a/pleg-2.png" alt="Механическая нога">
+        </div>
+        <div class="split-image">
+            <img src="/images/a/pleg-4.png" alt="Механическая нога">
+            <img src="/images/a/pleg-3.png" alt="Механическая нога">
+        </div>
+
         <li class="text">
             <p>
                 Помимо самих ног, Кулибин изготовил две куклы для наглядной демонстрации своих протезов. Первая кукла изображала человека, потерявшего ногу выше колена, а вторая — ниже колена. Всё это он делал за свой счёт и сам платил мастерам, участвовавшим в создании кукол (резному мастеру, живописцу, портному, парикмахеру, сапожнику).
@@ -61,7 +56,7 @@
         </li>
         <li class="interesting_fact">
             <EmbeddedBlock title="Любопытный факт">
-                <EmbeddedBlockText slot="short">
+                <EmbeddedBlockText slot="full">
                     Согласно некоторым свидетельствам, одна из моделей кулибинского протеза была вывезена во Францию и представлена самому Наполеону, который запустил ее в производство для снабжения протезами французской армии.
                 </EmbeddedBlockText>
             </EmbeddedBlock>
@@ -71,13 +66,17 @@
 
 
 <style>
-    .image {
-        margin: 0 auto 30px auto;
+    .split-image {
+        display: flex;
+        justify-content: center;
+        margin: 10px auto;
+    }
+    .split-image img {
+        max-height: 250px;
     }
 
-    .content-container {
-        position: absolute;
-        top: 80px;
+    .image {
+        //margin: 0 auto 30px auto;
     }
 
     .slider-container {
@@ -95,7 +94,6 @@
         align-items: center;
     }
     .compare-text {
-        font-family: Inter;
         font-weight: 400;
         color:#000957;
         font-size: 32px;
@@ -107,7 +105,6 @@
     }
     
     .text p {
-        font-family: Inter;
         font-weight: 400;
         font-size: 16px;
     }
@@ -119,10 +116,10 @@
     } 
     .heading {
         margin-top: 16px;
-        font-family: Inter;
         font-weight: bold;
         font-size: 48px;
         color: #000957;
+        text-align: center;
     }
     .interesting_fact {
         margin-left: 16px;
@@ -143,6 +140,12 @@
         }
         .compare-text {
             font-size: 26px
+        }
+    }
+
+    @media screen and (max-width: 360px) {
+        .heading {
+            font-size: 20px;
         }
     }
 </style>
