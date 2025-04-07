@@ -36,15 +36,14 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        /* height: 164px;     */
         gap: 12px;
+        margin-bottom: 30px;
     }
     p {
         position: relative;
         font-size: 18pt;
         color: #2D336B;
         line-height: 120%;
-        letter-spacing: -2%;
         margin-bottom: 12px;
 
     }

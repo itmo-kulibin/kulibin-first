@@ -57,14 +57,14 @@
         border: 1px solid #344CB7
     }
 
-    @media screen and (max-width: 340px) {
+    @media screen and (max-width: 375px) {
         .QuizButton {
             font-size: 16px;
             min-height: 40px;
         }
     }
 
-    @media screen and (max-width: 318px) {
+    @media screen and (max-width: 320px) {
         .QuizButton {
             font-size: 12px;
             min-height: 40px;
