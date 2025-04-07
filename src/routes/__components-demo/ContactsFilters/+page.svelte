@@ -14,7 +14,7 @@
     },
   };
 
-  let active = $state("all");
+  let active = $state();
 </script>
 
 <ContactsFilters {filters} bind:activeFilter={active} />
