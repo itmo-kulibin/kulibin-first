@@ -1,9 +1,6 @@
-<script>
-    export let imageSrc = "/Images/Kulibin_boat.jpg"
-</script>
 <main class="main-content">
 
-<img src={imageSrc} alt="Водоходное судно" class="drawing" />
+<img src="/images/a/boat.jpg" alt="Водоходное судно" class="drawing" />
 <h2>Водоходное судно</h2>
 <div class = "info-text">
     <p>
@@ -18,6 +15,11 @@
     <p>
     В 1804 году водоходное судно с грузоподъемностью 8500 пудов было опробовано. Скорость судна не уступала судну, которое приводилось в движение бурлацкой силой.
     </p>
+
+
+    <img src="/images/a/boat-1.jpg" alt="Водоходное судно" class="drawing" />
+    <img src="/images/a/boat-2.png" alt="Водоходное судно" class="drawing" />
+    <img src="/images/a/boat-3.jpg" alt="Водоходное судно" class="drawing" />
 </div>
 </main>
 
@@ -31,7 +33,7 @@
     }
     .drawing {
         position: relative;
-        width: 600px;
+        //width: 600px;
         height: 400px;
         overflow: hidden;
         margin: 0 auto 30px auto;
@@ -62,7 +64,6 @@
         .drawing {
             width: 100%;
             height: auto;
-            aspect-ratio: 3/2;
         }
     }
     @media (max-width: 500px) {
