@@ -1,20 +1,35 @@
 <script>
-    let { answer = "none", correct = false, active = true, setIndex} = $props(); 
+    let { answer = "none", correct = false, active = true, setIndex, selectedIndex = null, index = -1 } = $props();
     const STATES = { NEUTRAL: 0, CORRECT: 1, INCORRECT: 2 };
     let buttonState = $state(STATES.NEUTRAL);
     function checkTrue() {
-        if(correct){
-            buttonState = STATES.CORRECT;
-        }else{
-            buttonState = STATES.INCORRECT;
+        if (selectedIndex === null) {
+            if (correct) {
+                buttonState = STATES.CORRECT;
+            } else {
+                buttonState = STATES.INCORRECT;
+            }
+            setIndex();
         }
-        setIndex();
     }
+
+    $effect(() => {
+        if (selectedIndex !== null && correct && buttonState === STATES.NEUTRAL) {
+            buttonState = STATES.CORRECT;
+        }
+    });
 </script>
 
-<button class="QuizButton text-lg {buttonState == 0 ? '' : buttonState == 1 ? 'correct' : 'incorrect'} {active ? '' : 'inactive'}" onclick={checkTrue} >
+<button
+        class="QuizButton text-lg
+        {buttonState == 0 ? '' : buttonState == 1 ? 'correct' : 'incorrect'}
+        {active ? '' : 'inactive'}"
+        onclick={checkTrue}
+>
     {answer}
 </button>
+
+
 
 <style>
     @keyframes revealAnswer {
@@ -42,14 +57,14 @@
         border: 1px solid #344CB7
     }
 
-    @media screen and (max-width: 340px) {
+    @media screen and (max-width: 375px) {
         .QuizButton {
             font-size: 16px;
             min-height: 40px;
         }
     }
 
-    @media screen and (max-width: 318px) {
+    @media screen and (max-width: 320px) {
         .QuizButton {
             font-size: 12px;
             min-height: 40px;
@@ -75,7 +90,7 @@
         cursor: not-allowed;
         pointer-events: none;
     }
-    
+
 
 </style>
 

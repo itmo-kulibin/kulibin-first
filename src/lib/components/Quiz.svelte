@@ -9,23 +9,24 @@
             {answer: "Ответ Г", correct : false},
         ]
     };
-    let active = $state(null);
+    let selectedIndex = $state(null);
     let { data = defaultData } = $props();
 </script>
-
 
 <div class="QuizBlock">
     <p class="text-4xl font-bold">{ data.question }</p>
     <div class="buttons">
         {#each data.answers as answer, index}
-            <QuizAnswer 
-            answer={answer.answer} 
+            <QuizAnswer
+            answer={answer.answer}
             correct={answer.correct}
-            active={active === null || active === index}
-            setIndex={() => active = index}
-            />  
-        {/each} 
-    </div>    
+            active={selectedIndex === null || selectedIndex === index}
+            selectedIndex={selectedIndex}
+            index={index}
+            setIndex={() => selectedIndex = index}
+            />
+        {/each}
+    </div>
 </div>
 
 <style>
@@ -35,17 +36,16 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        /* height: 164px;     */
         gap: 12px;
+        margin-bottom: 30px;
     }
     p {
         position: relative;
         font-size: 18pt;
         color: #2D336B;
         line-height: 120%;
-        letter-spacing: -2%;
         margin-bottom: 12px;
-        
+
     }
 
     .buttons {
@@ -61,5 +61,5 @@
             font-size: 15pt;
         }
     }
-    
+
 </style>
