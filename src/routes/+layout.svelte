@@ -17,8 +17,9 @@
     onMount(() => {
         if (innerWidth > MOBILE_RES_W) {
             if (window.location.pathname != "/") {
-                console.log("redirected");
-                window.location.pathname = "/";
+                // TODO:
+                //console.log("redirected");
+                //window.location.pathname = "/";
             }
         }
     });
