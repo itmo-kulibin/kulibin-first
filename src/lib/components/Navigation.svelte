@@ -1,4 +1,6 @@
 <script>
+    import { DEFAULT_PATHNAME } from "$lib/utils/default_pathname";
+
     export let tall = false;
 
     const links = [
