@@ -1,10 +1,11 @@
 <script>
     import EmbeddedBlock from '$lib/components/EmbeddedBlock.svelte';
+    import { base } from '$app/paths';
 </script>
 
 
 <div class="image">
-  <img class="top_image" alt="Фонарь–прожектор" src="/images/a/lantern.jpg" />
+  <img class="top_image" alt="Фонарь–прожектор" src="{base}/images/a/lantern.jpg" />
 </div>
 
 <section class="main_part">
