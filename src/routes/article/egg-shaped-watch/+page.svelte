@@ -1,3 +1,6 @@
+<script>
+    import { base } from '$app/paths';
+</script>
 <main class="main-content">
     <h2>Часы <br /> «яичной фигуры»</h2>
     <div class="info-text">
@@ -45,7 +48,7 @@
             Сегодня эти часы можно увидеть в коллекции Государственного Эрмитажа.
         </p>
     </div>
-    <img src="/images/a/egg-shaped-watch.jpg" alt="Часы яичной фигуры" class="drawing" />
+    <img src="{base}/images/a/egg-shaped-watch.jpg" alt="Часы яичной фигуры" class="drawing" />
 </main>
 
 <style>

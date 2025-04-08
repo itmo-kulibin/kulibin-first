@@ -1,11 +1,14 @@
 <script>
-  export let fullname = "";
-  export let image = "";
-  export let isActive = false;
 
-  function contact_click(){ 
+    import { base } from '$app/paths';
+
+    export let fullname = "";
+    export let image = "";
+    export let isActive = false;
+
+    function contact_click(){
     isActive = !isActive;
-  }
+    }
 
 </script>
 
@@ -22,7 +25,7 @@
     <div class="contact-info">
         <p>
             {#if image}
-                <img src="/images/c/{image}" alt={fullname} class="image-class"/>
+                <img src="{base}/images/c/{image}" alt={fullname} class="image-class"/>
             {/if}
           <slot></slot>
         </p>
@@ -49,7 +52,7 @@
     cursor: pointer;
   }
 
-  .contact-info-default { 
+  .contact-info-default {
     display: none;
   }
 
