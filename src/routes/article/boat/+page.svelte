@@ -1,6 +1,9 @@
+<script>
+    import { base } from '$app/paths';
+</script>
 <main class="main-content">
 
-<img src="/images/a/boat.jpg" alt="Водоходное судно" class="drawing" />
+<img src="{base}/images/a/boat.jpg" alt="Водоходное судно" class="drawing" />
 <h2>Водоходное судно</h2>
 <div class = "info-text">
     <p>
@@ -17,9 +20,9 @@
     </p>
 
 
-    <img src="/images/a/boat-1.jpg" alt="Водоходное судно" class="drawing" />
-    <img src="/images/a/boat-2.png" alt="Водоходное судно" class="drawing" />
-    <img src="/images/a/boat-3.jpg" alt="Водоходное судно" class="drawing" />
+    <img src="{base}/images/a/boat-1.jpg" alt="Водоходное судно" class="drawing" />
+    <img src="{base}/images/a/boat-2.png" alt="Водоходное судно" class="drawing" />
+    <img src="{base}/images/a/boat-3.jpg" alt="Водоходное судно" class="drawing" />
 </div>
 </main>
 

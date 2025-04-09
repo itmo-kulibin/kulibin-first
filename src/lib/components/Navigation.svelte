@@ -4,12 +4,12 @@
     export let tall = false;
 
     const links = [
-        { name: "Биография", href: DEFAULT_PATHNAME + "biography" },
-        //{ name: "Лифт изобретений", href: "/lift", isHighlighted: true },
-        { name: "Кулибин-поэт", href: DEFAULT_PATHNAME + "poems" },
-        //{ name: "Места в Петербурге", href: "/map" },
-        { name: "Книга контактов", href: DEFAULT_PATHNAME + "contacts" },
-        { name: "Изобретения", href: DEFAULT_PATHNAME + "article" },
+        { name: "Биография", href: "biography" },
+        // { name: "Лифт изобретений", href: "lift", isHighlighted: true },
+        { name: "Кулибин-поэт", href: "poems" },
+        // { name: "Места в Петербурге", href: "map" },
+        { name: "Книга контактов", href: "contacts" },
+        { name: "Изобретения", href: "article" },
     ];
 </script>
 
