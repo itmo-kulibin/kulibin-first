@@ -1,11 +1,11 @@
 <script>
-    import { DEFAULT_PATHNAME } from "$lib/utils/default_pathname";
+    import { base } from "$app/paths";
 
     export let text;
     export let pagename;
   </script>
   
-  <a class="article-link" href={`${DEFAULT_PATHNAME}${pagename}`}>
+  <a class="article-link" href={`${base}/${pagename}`}>
     <span>{text}</span>
     <span class="arrow">→</span>
   </a>
