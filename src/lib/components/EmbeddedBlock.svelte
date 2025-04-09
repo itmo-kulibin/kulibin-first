@@ -5,13 +5,17 @@
     let forced = !$$slots.short && $$slots.full;
     let isExpanded = forced;
 
+    let block;
     function toggleExpand() {
         if (forced) return;
         isExpanded = !isExpanded;
+
+        if (!isExpanded)
+            block.scrollIntoView(true);
     }
 </script>
 
-<div class="embedded-block">
+<div class="embedded-block" bind:this={block}>
     {#if title}
         <h3 class="embedded-block__title">{title}</h3>
     {/if}
