@@ -3,7 +3,7 @@
     
     import { page } from "$app/state";
     import { base } from "$app/paths";
-    import { onMount } from 'svelte';
+    import { onMount, setContext } from 'svelte';
     import { fade } from 'svelte/transition';
     import Navigation from "$lib/components/Navigation.svelte";
 
@@ -23,6 +23,13 @@
     let headerShifterHeight = $state(0);
     let lastScrollY = $state(0);
     let isHeaderVisible = $state(true);
+
+    const customPageProps = {
+        hideHeader: () => {
+            isHeaderVisible = false;
+        }
+    };
+    setContext('custom-page-props', customPageProps);
 
     function handleScroll() {
         if (innerWidth <= MOBILE_RES_W) {
@@ -53,6 +60,15 @@
             handleScroll(); // Установить начальное состояние
         }
     });
+
+    let pageElement;
+    const scrollToTop = () => {
+        if (pageElement) {
+            pageElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    };
 </script>
 
 <svelte:window bind:this={window} bind:innerWidth bind:innerHeight on:scroll={handleScroll} />
@@ -92,8 +108,16 @@
             <Navigation />
         </div>
     {/if}
-    <div class="page">
+    <div class="page" bind:this={pageElement}>
         {@render children()}
+
+        <div class="go-top" class:hidden={!isHeaderVisible} on:click={scrollToTop}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up">
+              <line x1="12" y1="19" x2="12" y2="5" />
+              <polyline points="5 12 12 5 19 12" />
+            </svg>
+        </div>
     </div>
 {/if}
 
@@ -172,6 +196,29 @@
     .page {
         padding-top: 84px;
     }
+
+    .go-top {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        background-color: #000957;
+        width: 48px;
+        height: 48px;
+        color: #FFF2F2;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transform: translateX(0);
+        transition: transform 0.3s ease-in-out;
+
+    }
+
+    .go-top.hidden {
+        transform: translateX(200%);
+    }
+
 
     @media screen and (max-width: 375px) {
         .header .title {
