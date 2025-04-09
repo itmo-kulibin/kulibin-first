@@ -1,6 +1,7 @@
 <script>
     import EmbeddedBlock from '$lib/components/EmbeddedBlock.svelte';
     import EmbeddedBlockText from '$lib/components/EmbeddedBlockText.svelte';
+    import { base } from '$app/paths';
 </script>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -11,7 +12,7 @@
         <div class="heading">
             <h2> Протез("механическая нога")</h2>
         </div>
-    </div> 
+    </div>
 
     <ul class="content-page">
         <li class="text">
@@ -36,12 +37,12 @@
         </li>
 
         <div class="split-image">
-            <img src="/images/a/pleg-1.png" alt="Механическая нога">
-            <img src="/images/a/pleg-2.png" alt="Механическая нога">
+            <img src="{base}/images/a/pleg-1.png" alt="Механическая нога">
+            <img src="{base}/images/a/pleg-2.png" alt="Механическая нога">
         </div>
         <div class="split-image">
-            <img src="/images/a/pleg-4.png" alt="Механическая нога">
-            <img src="/images/a/pleg-3.png" alt="Механическая нога">
+            <img src="{base}/images/a/pleg-4.png" alt="Механическая нога">
+            <img src="{base}/images/a/pleg-3.png" alt="Механическая нога">
         </div>
 
         <li class="text">
@@ -103,7 +104,7 @@
         margin-left: 16px;
         margin-right: 16px;
     }
-    
+
     .text p {
         font-weight: 400;
         font-size: 16px;
@@ -113,7 +114,7 @@
         padding: 0;
         box-sizing: border-box;
         font-family: inherit;
-    } 
+    }
     .heading {
         margin-top: 16px;
         font-weight: bold;

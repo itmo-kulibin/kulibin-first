@@ -1,9 +1,11 @@
 <script>
+    import { base } from "$app/paths";
+
     export let text;
     export let pagename;
   </script>
   
-  <a class="article-link" href={`./${pagename}`}>
+  <a class="article-link" href={`${base}/${pagename}`}>
     <span>{text}</span>
     <span class="arrow">→</span>
   </a>

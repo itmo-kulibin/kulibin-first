@@ -16,13 +16,7 @@
   <ul class="contacts-card">
     <!-- Подразумевается, что список CONTACTS всегда непустой. -->
     {#each CONTACTS.filter((contact) => activeFilter === "all" || contact.tags?.includes(activeFilter)) as contact}
-        <li on:click={() => {
-            for (let a in contactsState) {
-                if (a != contact.name.replaceAll(" ", "_") + "__" + contact.text.length) {
-                    contactsState[a] = false;
-                }
-            }
-        }}>
+        <li>
           <Contact
                   fullname={contact.name}
                   image={contact.image}

@@ -1,17 +1,18 @@
 <script>
     import Navigation from '$lib/components/Navigation.svelte';
+    import { base } from '$app/paths';
 </script>
 
 <main class="main-content">
     <div class="main">
         <div class="portrait-container">
-            <img src="/images/portrait.png" alt="Портрет Иван Петрович Кулибин" class="portrait" />
+            <img src="{base}/images/portrait.png" alt="Портрет Иван Петрович Кулибин" class="portrait" />
             <div class="name-overlay">
                 <h2>Иван Петрович Кулибин</h2>
             </div>
         </div>
         <p class="bio-text">
-            Гений-самоучка, опередивший своё время, — Иван Кулибин создавал удивительные механизмы, которые могли бы изменить мир. Узнайте, как изобретатель без академического образования стал символом русской инженерной мысли!
+            На этом сайте, созданном студентами ИТМО, вы узнаете о жизни и изобретениях механика-самоучки И. П. Кулибина, которому отсутствие образования не помешало стать членом Академии наук и внести огромный вклад в развитие российской науки и техники.
         </p>
     </div>
     <div class="nav">
@@ -31,7 +32,7 @@
         margin: 0 auto;
         max-width: 600px;
     }
-    
+
     .main {
         margin-left: -20px;
         margin-right: -20px;
@@ -91,13 +92,13 @@
             width: 100%;
             height: auto;
         }
-        
+
         .portrait {
             width: 100%;
             height: auto;
             aspect-ratio: 3/4;
         }
-        
+
         .name-overlay {
             height: 50%;
         }

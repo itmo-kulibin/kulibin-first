@@ -1,12 +1,13 @@
 <script>
     import EmbeddedBlock from '$lib/components/EmbeddedBlock.svelte';
     import EmbeddedBlockText from '$lib/components/EmbeddedBlockText.svelte';
+    import { base } from '$app/paths';
 </script>
 
 
 <div class="content_container">
     <div class="main_image">
-        <img class="top_image" alt="Мост Кулибина" src="/images/a/bridge.jpg">
+        <img class="top_image" alt="Мост Кулибина" src="{base}/images/a/bridge.jpg">
     </div>
     <ul>
         <li class="part_name">
@@ -56,7 +57,7 @@
         </li>
 
     </ul>
-    
+
 
 </div>
 
@@ -84,7 +85,7 @@
         justify-content: center;
         height: 100%;
         background-color: #fff4f4;
-        padding: 0 20px; 
+        padding: 0 20px;
         overflow: hidden;
     }
 
@@ -103,7 +104,7 @@
         .content_container {
             padding: 0 20px;
         }
-        
+
         .top_image {
             width: calc(100% + var(--top-image-margin));
             max-width: none;
