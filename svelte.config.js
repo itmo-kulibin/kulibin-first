@@ -5,7 +5,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		paths: {
-			base: '/kulibin-first'
+			base: process.env.BASE_PATH || ''
 		},
 	}
 };

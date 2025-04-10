@@ -1,15 +1,15 @@
 <script>
-    import { DEFAULT_PATHNAME } from "$lib/utils/default_pathname";
+    import { base } from "$app/paths";
 
     export let tall = false;
 
     const links = [
-        { name: "Биография", href: "biography" },
+        { name: "Биография", href: base + "/biography" },
         // { name: "Лифт изобретений", href: "lift", isHighlighted: true },
-        { name: "Кулибин-поэт", href: "poems" },
+        { name: "Кулибин-поэт", href: base + "/poems" },
         // { name: "Места в Петербурге", href: "map" },
-        { name: "Книга контактов", href: "contacts" },
-        { name: "Изобретения", href: "article" },
+        { name: "Книга контактов", href: base + "/contacts" },
+        { name: "Изобретения", href: base + "/article" },
     ];
 </script>
 

@@ -1,5 +1,6 @@
 <script>
     import EmbeddedBlock from '$lib/components/EmbeddedBlock.svelte';
+    import EmbeddedBlockText from '$lib/components/EmbeddedBlockText.svelte';
     import { base } from '$app/paths';
 </script>
 
