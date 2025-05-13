@@ -90,6 +90,7 @@
       text-align: center;
       color: blue;
       text-decoration: none;
+      margin-bottom: 20px;
     }
     .popup-content {
       padding: 20px;
