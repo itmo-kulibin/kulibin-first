@@ -39,7 +39,7 @@
   }
 
   .contacts-card {
-    background-color: white;
+    background-color: #FFF2F2;
     border-radius: 12px;
     padding: 1rem;
     width: 100%;
