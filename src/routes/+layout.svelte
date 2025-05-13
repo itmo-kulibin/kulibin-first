@@ -148,11 +148,12 @@
     .view {
         position: relative;
         width: 500px;
-        height: 90vh;
+        height: 100vh;
         max-height: 1000px;
-        border-radius: 10px;
         overflow: scroll;
-        border: 3px solid #c4c4c4;
+        border: 2px solid #c4c4c4;
+        border-top: none;
+        border-bottom: none;
     }
 
     .header {
