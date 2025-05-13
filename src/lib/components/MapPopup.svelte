@@ -15,18 +15,21 @@
   {#if active}
     <div class="popup-overlay" transition:fade={{ duration: 100 }}>
       <div class="popup">
-        <button class="close-btn" on:click={closePopup}><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_178_307)">
-          <rect x="4" y="4" width="40" height="40" rx="20" fill="#344CB7"/>
-          <path d="M18.4 31L17 29.6L22.6 24L17 18.4L18.4 17L24 22.6L29.6 17L31 18.4L25.4 24L31 29.6L29.6 31L24 25.4L18.4 31Z" fill="#FFF2F2"/>
-          </g><defs><clipPath id="clip0_178_307">
-          <rect x="4" y="4" width="40" height="40" rx="20" fill="white"/>
-          </clipPath></defs></svg>
-        </button>
-        <img src={image} alt={title} class="popup-image" />
-        <h1><b>{title}</b></h1>
-        <slot></slot>
-        <a href={yamaps} target="_blank" class="map-link">📍Посмотреть на карте<br>{yamaps_addres}</a>
+        <div class="popup-content">
+          <button class="close-btn" on:click={closePopup}><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_178_307)">
+            <rect x="4" y="4" width="40" height="40" rx="20" fill="#344CB7"/>
+            <path d="M18.4 31L17 29.6L22.6 24L17 18.4L18.4 17L24 22.6L29.6 17L31 18.4L25.4 24L31 29.6L29.6 31L24 25.4L18.4 31Z" fill="#FFF2F2"/>
+            </g><defs><clipPath id="clip0_178_307">
+            <rect x="4" y="4" width="40" height="40" rx="20" fill="white"/>
+            </clipPath></defs></svg>
+          </button>
+          <img src={image} alt={title} class="popup-image" />
+          <h1><b>{title}</b></h1>
+          <a href={yamaps} target="_blank" class="map-link">📍Посмотреть на карте<br>{yamaps_addres}</a>
+          <slot></slot>
+          
+        </div>
       </div>
     </div>
   {/if}
@@ -34,9 +37,10 @@
   <style>
     .popup-overlay {
       position: fixed;
+      padding-top: 84px;
       top: 0;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       background: rgba(0, 9, 87, 0.2);
       display: flex;
       align-items: center;
@@ -44,14 +48,20 @@
     }
 
     .popup {
+      display: flex;
+      flex-direction: column;
+      flex-direction: column;
       background: white;
       padding: 10px;
       border-radius: 10px;
       width: 95dvw;
       height: 97dvh;
-      max-width: 500px;
+      max-height: calc(97vh - 80px); /* учёт отступа сверху и возможного снизу */
+      margin: 0 auto;
+
       text-align: center;
       position: relative;
+      overflow: auto;
     }
   
     .popup h1 {
@@ -76,17 +86,16 @@
     }
   
     .map-link {
-      position: absolute;
-      bottom: 0px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: blue;
-      padding: 10px 20px;
-      text-decoration: none;
-      
       display: inline-block;
-      width: max-content;
       text-align: center;
+      color: blue;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+    .popup-content {
+      padding: 20px;
+      overflow-y: auto;
+      flex: 1;
     }
   </style>
   
