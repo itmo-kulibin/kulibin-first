@@ -3,7 +3,8 @@
     import MapPopup from '$lib/components/MapPopup.svelte';
     import customization from '$lib/data/customization.json';
     import geoJsonData from '$lib/data/points.json';
-    import pointsContent from '$lib/content/map.json';
+    // import pointsContent from '$lib/content/map.json';
+    import { PLACES } from '$lib/content/places.js';
     import type { LngLat } from '@yandex/ymaps3-types';
     import type { YMapDefaultMarkerProps } from '@yandex/ymaps3-default-ui-theme';
 
@@ -218,7 +219,7 @@
     {#each points as item, index}
         <MapPopup
                 bind:active={actives[index]}
-                data={pointsContent[index]}
+                data={PLACES[index]}
                 style={`left: ${lastClicked.x}px; top: ${lastClicked.y}px`}
         />
     {/each}
