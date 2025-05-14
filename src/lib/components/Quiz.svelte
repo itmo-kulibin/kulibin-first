@@ -31,7 +31,7 @@
 
 <style>
     .QuizBlock {
-        width: min(357px, 100%);
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
