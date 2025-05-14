@@ -150,7 +150,7 @@
         width: 500px;
         height: 100vh;
         max-height: 1000px;
-        overflow: scroll;
+        overflow: auto;
         border: 2px solid #c4c4c4;
         border-top: none;
         border-bottom: none;
