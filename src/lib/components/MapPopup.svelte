@@ -1,75 +1,94 @@
 <script>
-    import { fade } from "svelte/transition";
-    export let image = "";
-    export let title = "";
-    export let yamaps = "";
-    export let address = "";
-    export let active = false;
-    
+  import { fade } from "svelte/transition";
+  import Quiz from './Quiz.svelte'; // Make sure to import your Quiz component
+  import EmbeddedBlock from './EmbeddedBlock.svelte'; // Import your EmbeddedBlock components
+  import EmbeddedBlockText from './EmbeddedBlockText.svelte';
 
-    function closePopup() {
-      active = false;
-    }
-  </script>
-  
-  {#if active}
-    <div class="popup-overlay" transition:fade={{ duration: 100 }}>
-      <div class="popup">
-        <div class="popup-content">
-          <button class="close-btn" on:click={closePopup}><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_178_307)">
+  export let data = {}; // This will receive the entire data object
+  export let active = false;
+
+  function closePopup() {
+    active = false;
+  }
+
+  $: paragraphs = data.text ? data.text.split('\n').filter(p => p.trim() !== '') : [];
+</script>
+
+{#if active}
+  <div class="popup-overlay" transition:fade={{ duration: 100 }}>
+    <div class="popup">
+      <button class="close-btn" on:click={closePopup}>
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_178_307)">
             <rect x="4" y="4" width="40" height="40" rx="20" fill="#344CB7"/>
             <path d="M18.4 31L17 29.6L22.6 24L17 18.4L18.4 17L24 22.6L29.6 17L31 18.4L25.4 24L31 29.6L29.6 31L24 25.4L18.4 31Z" fill="#FFF2F2"/>
-            </g><defs><clipPath id="clip0_178_307">
-            <rect x="4" y="4" width="40" height="40" rx="20" fill="white"/>
-            </clipPath></defs></svg>
-          </button>
-          {#if image && image != ""}
-              <img src={image} alt={title} class="popup-image" />
-          {/if}
-          <h1><b>{title}</b></h1>
-          {#if yamaps && yamaps != ""}
-          <a href={yamaps} target="_blank" class="map-link">📍Посмотреть на карте<br>{address}</a>
-          {:else}
-          <span class="map-link">📍Адрес<br>{address}</span>
-          {/if}
-          <slot></slot>
-          
-        </div>
-      </div>
+          </g>
+          <defs>
+            <clipPath id="clip0_178_307">
+              <rect x="4" y="4" width="40" height="40" rx="20" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+      </button>
+
+      <!-- Main content -->
+      <h1><b>{data.name}</b></h1>
+
+      <!-- Image if available -->
+      {#if data.image}
+        <img src={data.image} alt={data.name} class="popup-image" />
+      {/if}
+
+      <!-- Main text -->
+      {#each paragraphs as paragraph}
+        <p>{paragraph}</p>
+      {/each}
+
+      <!-- Fact section -->
+      {#if data.fact}
+        <EmbeddedBlock title="Любопытный факт">
+          <EmbeddedBlockText slot="full">
+            {data.fact}
+          </EmbeddedBlockText>
+        </EmbeddedBlock>
+      {/if}
+
+      <!-- Quiz section -->
+      {#if data.quiz}
+
+          <Quiz data={data.quiz}/>
+
+      {/if}
     </div>
-  {/if}
-  
-  <style>
-    .popup-overlay {
-      position: fixed;
-      padding-top: 84px;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 9, 87, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  </div>
+{/if}
+
+<style>
+  .popup-overlay {
+    top: 74px; /* высота хедера */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 9, 87, 0.2);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    margin-top: 10px;
+    z-index: 100;
+  }
 
     .popup {
-      display: flex;
-      flex-direction: column;
-      flex-direction: column;
       background: white;
       padding: 10px;
       border-radius: 10px;
       width: 95dvw;
       height: 97dvh;
-      max-height: calc(97vh - 80px); /* учёт отступа сверху и возможного снизу */
-      margin: 0 auto;
-
+      max-width: 500px;
       text-align: center;
       position: relative;
-      overflow: auto;
     }
-  
+
     .popup h1 {
       font-size: 40px;
       margin: 5px 0;
@@ -81,7 +100,7 @@
       width: 100%;
       border-radius: 10px;
     }
-  
+
     .close-btn {
       position: absolute;
       top: 10px;
@@ -90,21 +109,18 @@
       border: none;
       cursor: pointer;
     }
-  
+
     .map-link {
-        margin-top: 20px;
-      display: inline-block;
-      text-align: center;
-      text-decoration: none;
-      margin-bottom: 20px;
-    }
-    a.map-link {
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
       color: blue;
-    }
-    .popup-content {
-      padding: 20px;
-      overflow-y: auto;
-      flex: 1;
+      padding: 10px 20px;
+      text-decoration: none;
+
+      display: inline-block;
+      width: max-content;
+      text-align: center;
     }
   </style>
-  
