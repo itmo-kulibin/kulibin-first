@@ -20,7 +20,7 @@
           <Contact
                   fullname={contact.name}
                   image={contact.image}
-                  bind:isActive={contactsState[contact.name.replaceAll(" ", "_") + "__" + contact.text.length]}>
+                  bind:isActive={contactsState[contact.name.replaceAll(" ", "_") + "__" + (contact.text ? contact.text.length : "empty")]}>
             {contact.text}
           </Contact>
       </li>

@@ -55,6 +55,7 @@
 <div class="map-wrapper">
     <img bind:this={image} class="map" style:transform="scale({scale})" on:click={mapClick} src="{base}/map/map.svg" />
 
+
     {#each points as item, index}
         <MapPoint
                 text={item.customIcon ? '' : places[index].name}
@@ -106,6 +107,7 @@
         </div>
     </div>
 </div>
+
 
 <style>
     .map-wrapper {
@@ -170,3 +172,4 @@
         pointer-events: auto;
     }
 </style>
+
