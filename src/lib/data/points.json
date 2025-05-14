@@ -1,0 +1,218 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "name": "Места Кулибина в Санкт-Петербурге",
+    "creator": "Yandex Map Constructor",
+    "description": "В рамках проекта \"Кулибин\" ИТМО\n2024-2025"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": 0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.304488,
+          59.941545
+        ]
+      },
+      "properties": {
+        "description": "Музей; </br>\nУниверситетская наб., 3, Санкт-Петербург",
+        "iconCaption": "Кунсткамера",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.308515,
+          59.937515
+        ]
+      },
+      "properties": {
+        "description": "Достопримечательность; </br>\nАдмиралтейский пр., 1, Санкт-Петербург",
+        "iconCaption": "Адмиралтейство",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.314896,
+          59.950143
+        ]
+      },
+      "properties": {
+        "description": "Достопримечательность; </br>\nСанкт-Петербург, территория Петропавловская крепость, 3Ч",
+        "iconCaption": "Петропавловская крепость",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.334409,
+          59.933588
+        ]
+      },
+      "properties": {
+        "description": "НИИ; </br>\nСадовая ул., 18, Санкт-Петербург",
+        "iconCaption": "Российская национальная библиотека",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.283089,
+          59.921223
+        ]
+      },
+      "properties": {
+        "description": "Санкт-Петербург, площадь Кулибина",
+        "iconCaption": "Площадь Кулибина",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.285518,
+          59.936735
+        ]
+      },
+      "properties": {
+        "description": "Достопримечательность; </br>\n7-я линия Васильевского острова, 2/11, Санкт-Петербург",
+        "iconCaption": "Дом академиков",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.373135782446905,
+          59.94540639754347
+        ]
+      },
+      "properties": {
+        "description": "Парк культуры и отдыха; </br>\nСанкт-Петербург, Потёмкинская улица",
+        "iconCaption": "Таврический сад",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.375969,
+          59.947685
+        ]
+      },
+      "properties": {
+        "description": "Музей; </br>\nШпалерная ул., 47, Санкт-Петербург",
+        "iconCaption": "Таврический дворец",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.441497,
+          59.880238
+        ]
+      },
+      "properties": {
+        "description": "Санкт-Петербург, улица Бабушкина, 36к1П",
+        "iconCaption": "Петербургский стекольный завод",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.35216,
+          59.957615
+        ]
+      },
+      "properties": {
+        "description": "Санкт-Петербург, улица Академика Лебедева, 6Ж",
+        "iconCaption": "Санкт-Петербургская Медико-Хирургическая академия",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.312946,
+          59.940925
+        ]
+      },
+      "properties": {
+        "description": "Достопримечательность; </br>\nДворцовая площадь, 2, Санкт-Петербург",
+        "iconCaption": "Зимний дворец",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 11,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.302874,
+          59.940885
+        ]
+      },
+      "properties": {
+        "description": "Достопримечательность; </br>\nУниверситетская наб., 5, Санкт-Петербург",
+        "iconCaption": "Петербургская Академия наук",
+        "marker-color": "#1e98ff"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 12,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.428785,
+          59.932966
+        ]
+      },
+      "properties": {
+        "description": "Архив; </br>\nЗаневский просп., 36, Санкт-Петербург",
+        "iconCaption": "Российский государственный исторический архив",
+        "marker-color": "#1e98ff"
+      }
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 <script>
     import { slide } from 'svelte/transition';
     export let title = '';
-    
+
     let forced = !$$slots.short && $$slots.full;
     let isExpanded = forced;
 
@@ -19,7 +19,7 @@
     {#if title}
         <h3 class="embedded-block__title">{title}</h3>
     {/if}
-    
+
     <div class="embedded-block__content">
         <div class="content-wrapper">
             {#if !isExpanded}
@@ -27,7 +27,7 @@
                         <slot name="short" />
                     </div>
             {/if}
-        
+
             {#if $$slots.full}
                 {#if isExpanded}
                         <div class="full-text" transition:slide|local={{ duration: 250 }} >
@@ -37,8 +37,8 @@
 
                 {#if !forced}
                 <div class="toggle-container">
-                    <button 
-                        class="embedded-block__toggle" 
+                    <button
+                        class="embedded-block__toggle"
                         on:click={toggleExpand}
                         aria-expanded={isExpanded}
                     >
@@ -57,7 +57,6 @@
         margin: 1.5rem 0;
         background: #98a5d8;
 		color: #42487c;
-        font-family: serif;
         line-height: 1.6;
         border-radius: 12px;
         overflow: hidden;
@@ -69,7 +68,7 @@
         font-weight: 600;
         color: #1f2937;
     }
-	
+
     .content-wrapper {
         display: flex;
         flex-direction: column;
@@ -82,18 +81,18 @@
         white-space: pre-line;
         transition: all 0.5s ease;
     }
-    
+
     .short-text {
         white-space: pre-line;
     }
-    
+
     .toggle-container {
         display: flex;
         justify-content: center;
         width: 100%;
         margin-top: 0.5rem;
     }
-    
+
     .embedded-block__toggle {
         display: flex;
         align-items: center;
@@ -103,7 +102,6 @@
 		background: none;
         border: none;
         font-size: 1.6rem;
-        font-family: sans-serif;
         transition: all 0.2s ease;
         width: auto;
     }
