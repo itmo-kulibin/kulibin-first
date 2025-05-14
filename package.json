@@ -17,5 +17,10 @@
 		"svelte": "^5.0.0",
 		"tailwindcss": "^4.0.0",
 		"vite": "^6.0.0"
+	},
+	"dependencies": {
+		"@types/yandex-maps": "^2.1.36",
+		"@yandex/ymaps3-default-ui-theme": "^0.0.19",
+		"@yandex/ymaps3-types": "^1.0.16477558"
 	}
 }

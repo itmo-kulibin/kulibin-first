@@ -20,7 +20,7 @@
           <Contact
                   fullname={contact.name}
                   image={contact.image}
-                  bind:isActive={contactsState[contact.name.replaceAll(" ", "_") + "__" + contact.text.length]}>
+                  bind:isActive={contactsState[contact.name.replaceAll(" ", "_") + "__" + (contact.text ? contact.text.length : "empty")]}>
             {contact.text}
           </Contact>
       </li>
@@ -39,7 +39,7 @@
   }
 
   .contacts-card {
-    background-color: white;
+    background-color: #FFF2F2;
     border-radius: 12px;
     padding: 1rem;
     width: 100%;
