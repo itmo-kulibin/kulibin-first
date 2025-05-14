@@ -3,7 +3,7 @@
     export let image = "";
     export let title = "";
     export let yamaps = "";
-    export let yamaps_addres = "";
+    export let address = "";
     export let active = false;
     
 
@@ -24,9 +24,15 @@
             <rect x="4" y="4" width="40" height="40" rx="20" fill="white"/>
             </clipPath></defs></svg>
           </button>
-          <img src={image} alt={title} class="popup-image" />
+          {#if image && image != ""}
+              <img src={image} alt={title} class="popup-image" />
+          {/if}
           <h1><b>{title}</b></h1>
-          <a href={yamaps} target="_blank" class="map-link">📍Посмотреть на карте<br>{yamaps_addres}</a>
+          {#if yamaps && yamaps != ""}
+          <a href={yamaps} target="_blank" class="map-link">📍Посмотреть на карте<br>{address}</a>
+          {:else}
+          <span class="map-link">📍Адрес<br>{address}</span>
+          {/if}
           <slot></slot>
           
         </div>
@@ -86,11 +92,14 @@
     }
   
     .map-link {
+        margin-top: 20px;
       display: inline-block;
       text-align: center;
-      color: blue;
       text-decoration: none;
       margin-bottom: 20px;
+    }
+    a.map-link {
+      color: blue;
     }
     .popup-content {
       padding: 20px;

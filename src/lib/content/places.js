@@ -1,4 +1,7 @@
-[
+const CONV_W = 282 * 6.2;
+const CONV_H = 123 * 6.2;
+
+export const PLACES = [
   {
     "name": "Кунсткамера",
     "image": "",
@@ -14,6 +17,11 @@
         { "answer": "Саксен-Кобург-Готский", "correct": false },
         { "answer": "Голштейнский", "correct": false }
       ]
+    },
+    "map_info": {
+        posX: 0.4605263157894737,
+        posY: 0.36686046511627907,
+        customIcon: "kunts",
     }
   },
   {
@@ -31,6 +39,12 @@
         { "answer": "А. А. Блок", "correct": false },
         { "answer": "Г. Р. Державин", "correct": false }
       ]
+    },
+    "map_info": {
+        posX: 838 / CONV_W,
+        posY: 315 / CONV_H,
+        customIcon: "adm",
+        customIconHeight: 96,
     }
   },
   {
@@ -48,6 +62,12 @@
         { "answer": "флюгера", "correct": false },
         { "answer": "ориентира", "correct": false }
       ]
+    },
+    "map_info": {
+        posX: 886 / CONV_W,
+        posY: 178 / CONV_H,
+        customIcon: "petr",
+        customIconHeight: 96,
     }
   },
   {
@@ -65,6 +85,10 @@
         { "answer": "Д. А. Трезини", "correct": false },
         { "answer": "А. Д. Захарова", "correct": false }
       ]
+    },
+    "map_info": {
+        posX: 1016 / CONV_W,
+        posY: 369 / CONV_H,
     }
   },
   {
@@ -82,6 +106,10 @@
         { "answer": "Гавань", "correct": false },
         { "answer": "Коломна", "correct": true }
       ]
+    },
+    "map_info": {
+        posX: 671 / CONV_W,
+        posY: 537 / CONV_H,
     }
   },
   {
@@ -99,6 +127,10 @@
         { "answer": "А. К. Нартов", "correct": false },
         { "answer": "М. В. Ломоносов", "correct": true }
       ]
+    },
+    "map_info": {
+        posX: 700 / CONV_W,
+        posY: 339 / CONV_H,
     }
   },
   {
@@ -116,7 +148,12 @@
         { "answer": "Инжир", "correct": false },
         { "answer": "Папайя", "correct": false }
       ]
+    },
+    "map_info": {
+        posX: 1238 / CONV_W,
+        posY: 222 / CONV_H,
     }
+
   },
   {
     "name": "Таврический дворец",
@@ -133,6 +170,10 @@
         { "answer": "Невидимые фонари", "correct": false },
         { "answer": "Петровы речи", "correct": false }
       ]
+    },
+    "map_info": {
+        posX: 1274 / CONV_W,
+        posY: 194 / CONV_H,
     }
   },
   {
@@ -150,7 +191,12 @@
         { "answer": "Петр I", "correct": false },
         { "answer": "Александр I", "correct": false }
       ]
+    },
+    "map_info": {
+        posX: 1424 / CONV_W,
+        posY: 666 / CONV_H,
     }
+
   },
   {
     "name": "Санкт-Петербургская Медико-Хирургическая академия",
@@ -167,6 +213,10 @@
         { "answer": "Александр I", "correct": false },
         { "answer": "Николай I", "correct": false }
       ]
+    },
+    "map_info": {
+        posX: 1112 / CONV_W,
+        posY: 61 / CONV_H,
     }
   },
   {
@@ -184,6 +234,10 @@
         { "answer": "Красный", "correct": false },
         { "answer": "Желтый", "correct": true }
       ]
+    },
+    "map_info": {
+        posX: 880 / CONV_W,
+        posY: 285 / CONV_H,
     }
   },
   {
@@ -201,6 +255,10 @@
         { "answer": "Адмиралтейская", "correct": false },
         { "answer": "Аптекарская", "correct": false }
       ]
+    },
+    "map_info": {
+        posX: 783 / CONV_W,
+        posY: 281 / CONV_H,
     }
   },
   {
@@ -218,6 +276,10 @@
         { "answer": "РГАДА", "correct": true },
         { "answer": "ЦГА", "correct": false }
       ]
+    },
+    "map_info": {
+        posX: 1617 / CONV_W,
+        posY: 368 / CONV_H,
     }
   }
 ]

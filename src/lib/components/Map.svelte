@@ -3,26 +3,21 @@
     import { onMount } from 'svelte';
     import MapPoint from '$lib/components/MapPoint.svelte';
     import MapPopup from '$lib/components/MapPopup.svelte';
+    import EmbeddedBlock from '$lib/components/EmbeddedBlock.svelte';
+    import EmbeddedBlockText from '$lib/components/EmbeddedBlockText.svelte';
+    import Quiz from '$lib/components/Quiz.svelte';
 
+    export let places = [];
     export let points = [];
     export let lastClicked = {x:0,y:0};
-    
-    [
-    {
-        "posX": 0.151489835700362,
-        "posY": 0.2304147465437788,
-        "text": "1",
-    },
-    {
-        "posX": 0.4288499025341131,
-        "posY": 0.5862775217613927,
-    },
-    {
-        "posX": 0.2970616725863739,
-        "posY": 0.4160894518108054,
-        "text": "8"
+
+    if (places && places.length > 0) {
+        places.forEach(pl => {
+            const p = pl.map_info;
+            if (!p) return;
+            points.push(p);
+        });
     }
-    ].forEach(i => {points.push(i)});
 
     let actives = [];
     points.forEach(() => {actives.push(false)});
@@ -60,12 +55,30 @@
 <div class="map-wrapper">
     <img bind:this={image} class="map" style:transform="scale({scale})" on:click={mapClick} src="{base}/map/map.svg" />
     {#each points as item, index}
-        <MapPoint text={item.text}
+        <MapPoint text={item.customIcon ? '' : places[index].name}
                   bind:posX={item.x}
                   bind:posY={item.y}
                   customIcon={item.customIcon}
+                  customIconHeight={item.customIconHeight}
                   onClick={() => {actives[index]=true;}} />
-        <MapPopup bind:active={actives[index]} />
+                  <div class="popup-layer">
+                  <MapPopup bind:active={actives[index]}
+                            title={places[index].name}
+                            yamaps={places[index].yamaps_url}
+                            address={places[index].address} >
+                            
+                            <p>{places[index].text}</p>
+                            <EmbeddedBlock>
+                                <EmbeddedBlockText slot="full">
+                                    {places[index].fact}
+                                </EmbeddedBlockText>
+                            </EmbeddedBlock>
+                            
+                            <div style="display: flex; justify-content: center;">
+                                <Quiz data={places[index].quiz} />
+                            </div>
+                  </MapPopup>
+                  </div>
     {/each}
 
     <div class="controls">
@@ -96,7 +109,10 @@
         /* transform: scale(6.2); */
         transform-origin: top left;
     }
-
+    .popup-layer {
+        position: relative;
+        z-index: 100;
+    }
     .controls {
         position: fixed;
         right: 10px;

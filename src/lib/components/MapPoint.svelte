@@ -20,9 +20,12 @@
         position: absolute;
         cursor: pointer;
         transform: translateX(-50%) translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     img {
-        height: 64px;
         width: auto;
         max-width: unset;
     }
@@ -30,6 +33,7 @@
         display: block;
         width: 100%;
         text-align: center;
+        font-size: 14px;
     }
 </style>
 
