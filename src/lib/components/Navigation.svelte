@@ -7,7 +7,7 @@
         { name: "Биография", href: base + "/biography" },
         // { name: "Лифт изобретений", href: "lift", isHighlighted: true },
         { name: "Кулибин-поэт", href: base + "/poems" },
-        // { name: "Места в Петербурге", href: "map" },
+        { name: "Места в Петербурге", href: "/map" },
         { name: "Книга контактов", href: base + "/contacts" },
         { name: "Изобретения", href: base + "/article" },
     ];
