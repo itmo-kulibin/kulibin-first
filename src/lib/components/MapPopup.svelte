@@ -55,9 +55,9 @@
 
       <!-- Quiz section -->
       {#if data.quiz}
-
+        <div class="question">
           <Quiz data={data.quiz}/>
-
+        </div>
       {/if}
     </div>
   </div>
@@ -75,52 +75,64 @@
     display: flex;
     position: absolute;
     margin-top: 10px;
-    z-index: 100;
+    z-index: 1000;
   }
 
-    .popup {
-      background: white;
-      padding: 10px;
-      border-radius: 10px;
-      width: 95dvw;
-      height: 97dvh;
-      max-width: 500px;
-      text-align: center;
-      position: relative;
-    }
+  .popup {
+    background: #FFF2F2;
+    padding: 20px;
+    border-radius: 10px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    max-width: 500px;
+    max-height: 90vh;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
 
-    .popup h1 {
-      font-size: 40px;
-      margin: 5px 0;
-      color: #000;
-    }
+  .popup h1 {
+    font-size: 24px;
+    margin: 10px 0 20px;
+    color: #000;
+  }
 
-    .popup-image {
-      max-height: 400px;
-      width: 100%;
-      border-radius: 10px;
-    }
+  .popup-image {
+    max-height: 200px;
+    width: auto;
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
 
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
+  .popup p {
+    text-align: left;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
 
-    .map-link {
-      position: absolute;
-      bottom: 0px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: blue;
-      padding: 10px 20px;
-      text-decoration: none;
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+  }
 
-      display: inline-block;
-      width: max-content;
-      text-align: center;
-    }
-  </style>
+  .map-link {
+    display: inline-block;
+    margin: 20px 0 10px;
+    color: blue;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1px solid blue;
+    border-radius: 5px;
+  }
+
+  .question {
+    margin: 20px 0;
+  }
+</style>

@@ -54,48 +54,58 @@
 
 <div class="map-wrapper">
     <img bind:this={image} class="map" style:transform="scale({scale})" on:click={mapClick} src="{base}/map/map.svg" />
+
     {#each points as item, index}
-        <MapPoint text={item.customIcon ? '' : places[index].name}
-                  bind:posX={item.x}
-                  bind:posY={item.y}
-                  customIcon={item.customIcon}
-                  customIconHeight={item.customIconHeight}
-                  onClick={() => {actives[index]=true;}} />
-                  <div class="popup-layer">
-                  <MapPopup bind:active={actives[index]}
-                            title={places[index].name}
-                            yamaps={places[index].yamaps_url}
-                            address={places[index].address} >
-                            
-                            <p>{places[index].text}</p>
-                            <EmbeddedBlock>
-                                <EmbeddedBlockText slot="full">
-                                    {places[index].fact}
-                                </EmbeddedBlockText>
-                            </EmbeddedBlock>
-                            
-                            <div style="display: flex; justify-content: center;">
-                                <Quiz data={places[index].quiz} />
-                            </div>
-                  </MapPopup>
-                  </div>
+        <MapPoint
+                text={item.customIcon ? '' : places[index].name}
+                bind:posX={item.x}
+                bind:posY={item.y}
+                customIcon={item.customIcon}
+                customIconHeight={item.customIconHeight}
+                onClick={() => {
+                actives = actives.map(() => false);
+                actives[index] = true;
+            }}
+        />
     {/each}
+
+    {#each points as item, index}
+        {#if actives[index]}
+            <div class="fullscreen-popup-container">
+                <div class="popup-backdrop" on:click|self={() => actives[index] = false}>
+                    <div class="popup-wrapper">
+                        <MapPopup
+                                bind:active={actives[index]}
+                                data={{
+                                name: places[index].name,
+                                yamaps_url: places[index].yamaps_url,
+                                address: places[index].address,
+                                text: places[index].text,
+                                fact: places[index].fact,
+                                quiz: places[index].quiz,
+                            }}
+                        />
+                    </div>
+                </div>
+            </div>
+        {/if}
+    {/each}
+
 
     <div class="controls">
         <div class="button" on:click={zoomIn}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-              <line x1="12" y1="5" x2="12" y2="19" />
-              <line x1="5" y1="12" x2="19" y2="12" />
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
             </svg>
         </div>
         <div class="button" on:click={zoomOut}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-              <line x1="5" y1="12" x2="19" y2="12" />
+                <line x1="5" y1="12" x2="19" y2="12" />
             </svg>
         </div>
     </div>
 </div>
-
 
 <style>
     .map-wrapper {
@@ -104,21 +114,19 @@
         overflow: scroll;
         position: relative;
     }
+
     .map {
         transition: transform 0.2s;
-        /* transform: scale(6.2); */
         transform-origin: top left;
     }
-    .popup-layer {
-        position: relative;
-        z-index: 100;
-    }
+
     .controls {
         position: fixed;
         right: 10px;
         bottom: 10px;
         z-index: 5;
     }
+
     .controls .button {
         background-color: #000957;
         width: 48px;
@@ -131,5 +139,34 @@
         cursor: pointer;
         margin-top: 5px;
     }
-</style>
 
+    .fullscreen-popup-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+    }
+
+    .popup-backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 9, 87, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .popup-wrapper {
+        width: 100%;
+        max-width: 600px;
+        max-height: 90vh;
+        pointer-events: auto;
+    }
+</style>
