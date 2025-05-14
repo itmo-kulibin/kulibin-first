@@ -12,6 +12,21 @@
   }
 
   $: paragraphs = data.text ? data.text.split('\n').filter(p => p.trim() !== '') : [];
+
+  $: contentWithQuizzes = (() => {
+    if (!data.quiz) return paragraphs;
+
+    let result = [];
+    let quizInserted = false;
+    for (let i = 0; i < paragraphs.length; i++) {
+      result.push(paragraphs[i]);
+      if (!quizInserted && (i === 1 || i === paragraphs.length - 1)) {
+        result.push('quiz');
+        quizInserted = true;
+      }
+    }
+    return result;
+  })();
 </script>
 
 {#if active}
@@ -39,9 +54,15 @@
         <img src={data.image} alt={data.name} class="popup-image" />
       {/if}
 
-      <!-- Main text -->
-      {#each paragraphs as paragraph}
-        <p>{paragraph}</p>
+      <!-- Main text with quizzes -->
+      {#each contentWithQuizzes as item, index}
+        {#if item === 'quiz'}
+          <div class="question">
+            <Quiz data={data.quiz}/>
+          </div>
+        {:else}
+          <p>{item}</p>
+        {/if}
       {/each}
 
       <!-- Fact section -->
@@ -51,13 +72,6 @@
             {data.fact}
           </EmbeddedBlockText>
         </EmbeddedBlock>
-      {/if}
-
-      <!-- Quiz section -->
-      {#if data.quiz}
-        <div class="question">
-          <Quiz data={data.quiz}/>
-        </div>
       {/if}
     </div>
   </div>
