@@ -31,7 +31,6 @@
         margin: 0 auto;
         text-align: center;
         background: #FFF2F2;
-        color: #000000;
 
     }
     .drawing {

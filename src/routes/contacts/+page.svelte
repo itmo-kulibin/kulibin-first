@@ -8,6 +8,12 @@
   let activeFilter = $state();
 
   let contactsState = $state({});
+
+  function formatText(text) {
+    if (!text) return '';
+    // Затем заменяем \n на <br>
+    return text.replace(/\n/g, '<br>');
+  }
 </script>
 
 <div class="contacts-wrapper">
@@ -20,8 +26,9 @@
           <Contact
                   fullname={contact.name}
                   image={contact.image}
+                  tags={contact.tags}
                   bind:isActive={contactsState[contact.name.replaceAll(" ", "_") + "__" + (contact.text ? contact.text.length : "empty")]}>
-            {contact.text}
+            {@html formatText(contact.text)}
           </Contact>
       </li>
     {/each}

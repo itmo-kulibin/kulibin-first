@@ -292,7 +292,6 @@
     }
 
     p {
-        color: #000000;
         line-height: 1.6;
         margin-bottom: 15px;
     }

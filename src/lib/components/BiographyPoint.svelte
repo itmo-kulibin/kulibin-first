@@ -44,11 +44,11 @@
               width: 1em;
               height: 1em;
               border-radius: 50%;
-              border: 3px solid #000957; 
+              border: 3px solid #000957;
               font-size: 64px;
               margin-right: 20px;
           }
-          
+
           .year {
               position: relative;
               font-family: Inter;
