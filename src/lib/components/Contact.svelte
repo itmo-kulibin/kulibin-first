@@ -113,13 +113,13 @@
   }
 
   /* Примеры цветов для тегов (аналоги Telegram) */
-  .tag-favorite { background-color: #f3af32; color: #a37015; }
-  .tag-relatives { background-color: #a15b28; color: #582f13; }
-  .tag-apprentices { background-color: #e1d1b7; color: #bba687; }
-  .tag-scientists { background-color: #405874; color: #162137; }
-  .tag-customers { background-color: #97856f; color: #56442e; }
-  .tag-officials { background-color: #564334; color: #261c13; }
-  .tag-foreigners { background-color: #5e76a2; color: #324160; }
-  .tag-other { background-color: #b8b3b0; color: #7b7670; }
+  .tag-favorite { background-color: #fed78a; color: #bd9146; }
+  .tag-relatives { background-color: #f4a060; color: #a15821; }
+  .tag-apprentices { background-color: #d8c0a6; color: #af986e; }
+  .tag-scientists { background-color: #7ea4c8; color: #3d5674; }
+  .tag-customers { background-color: #d8c0a6; color: #9b6f4c; }
+  .tag-officials { background-color: #9b6f4c; color: #533721; }
+  .tag-foreigners { background-color: #afc7f7; color: #5c74a4; }
+  .tag-other { background-color: #e5e0da; color: #9a958f; }
 </style>
 
